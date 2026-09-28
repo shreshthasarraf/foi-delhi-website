@@ -827,7 +827,7 @@
         <div class="festival-carousel" id="festivalCarousel" aria-label="Explore festival carousel">
           <article class="festival-card" data-festival-index="0" data-page="programmes"><div class="festival-art"><span>01 · Market</span></div><div class="festival-copy"><h3>DU Bazaar</h3><p>Books, makers, stalls, conversations and discoveries in one lively space.</p></div></article>
           <article class="festival-card" data-festival-index="1" data-page="programmes"><div class="festival-art"><span>02 · Program</span></div><div class="festival-copy"><h3>Program</h3><p>Explore talks, stalls, competitions, performances and activities across the festival.</p></div></article>
-          <article class="festival-card" data-festival-index="2" data-page="speakers" data-tab="expected"><div class="festival-art"><span>03 · Speakers</span></div><div class="festival-copy"><h3>Speakers</h3><p>Meet inspiring voices and explore the questions shaping our world.</p></div></article>
+          <article class="festival-card" data-festival-index="2" data-page="speakers" data-tab="past"><div class="festival-art"><span>03 · Speakers</span></div><div class="festival-copy"><h3>Speakers</h3><p>Meet inspiring voices and explore the questions shaping our world.</p></div></article>
           <article class="festival-card" data-festival-index="3" data-page="partners"><div class="festival-art"><span>04 · Partners</span></div><div class="festival-copy"><h3>Partners</h3><p>Meet the organisations and supporters helping bring the Festival of Ideas to life.</p></div></article>
           <article class="festival-card" data-festival-index="4" data-page="gallery"><div class="festival-art"><span>05 · Gallery</span></div><div class="festival-copy"><h3>Gallery</h3><p>See moments, people and memories from past editions of the festival.</p></div></article>
           <article class="festival-card" data-festival-index="5" data-page="programmes"><div class="festival-art"><span>06 · Create</span></div><div class="festival-copy"><h3>Workshops</h3><p>Hands-on sessions where you can learn, make, experiment and collaborate.</p></div></article>
@@ -902,8 +902,8 @@
     <p class="page-desc">Voices returning from earlier editions, and new names confirmed for this year.</p>
 
     <div class="tab-row" role="tablist">
-      <button class="tab-btn active" data-speaker-tab="expected">Expected Speakers</button>
-      <button class="tab-btn" data-speaker-tab="past">Past Speakers</button>
+      <button class="tab-btn" data-speaker-tab="expected">Expected Speakers</button>
+      <button class="tab-btn active" data-speaker-tab="past">Past Speakers</button>
     </div>
 
     <div class="speaker-grid" id="speakerGrid"></div>
@@ -1326,7 +1326,7 @@
     sp.color = sp.color || ['#3B1653','#C23764'];
     sp.bio = sp.bio || 'Speaker details will be announced soon.';
   });
-  var currentSpeakerTab = 'expected';
+  var currentSpeakerTab = 'past';
   var lastSpeakerFrom = 'speakers';
 
   /* ===================== PAGE ROUTER ===================== */
@@ -1341,6 +1341,11 @@
     qsa('.tab-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.speakerTab === tab); });
     var grid = qs('#speakerGrid');
     grid.innerHTML = '';
+    // ponytail: expected list kept in data; swap this out when line-up is announced
+    if (tab === 'expected') {
+      grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:60px 0; font-size:22px; font-weight:600; color:var(--plum);">Coming soon!</p>';
+      return;
+    }
     speakersData[tab].forEach(function(sp){
       var card = document.createElement('div');
       card.className = 'speaker-card';
@@ -1892,7 +1897,7 @@
   }); }
 
   /* Init */
-  renderSpeakerGrid('expected');
+  renderSpeakerGrid('past');
   renderPastSpeakersCarousel();
   renderPartnersCarousel();
   qsa('.nav-link').forEach(function(l){ l.classList.toggle('active', l.dataset.page === 'home'); });
