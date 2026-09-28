@@ -1892,8 +1892,21 @@
       if(firstError) firstError.focus();
       return;
     }
-    qs('#formView').style.display = 'none';
-    qs('#successView').classList.add('show');
+    var submitBtn = qs('.volunteer-submit', volunteerForm);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    fetch('/api/volunteer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(volunteerForm)))
+    }).then(function(r){
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      qs('#formView').style.display = 'none';
+      qs('#successView').classList.add('show');
+    }).catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Could not submit. Please try again';
+    });
   }); }
 
   /* Init */
