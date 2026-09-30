@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/speakers", "destination": "/index.html" },
+    { "source": "/speakers/:id", "destination": "/index.html" },
+    { "source": "/programmes", "destination": "/index.html" },
+    { "source": "/programmes/:id", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/about/:section", "destination": "/index.html" },
+    { "source": "/partners", "destination": "/index.html" },
+    { "source": "/gallery", "destination": "/index.html" },
+    { "source": "/attendees", "destination": "/index.html" },
+    { "source": "/delegates", "destination": "/index.html" },
+    { "source": "/volunteers", "destination": "/index.html" }
+  ]
+}
