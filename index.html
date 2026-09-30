@@ -1962,7 +1962,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     var submitBtn = qs('.volunteer-submit', volunteerForm);
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
-    fetch('/api/volunteer', {
+    fetch('/volunteer', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(new FormData(volunteerForm)))
