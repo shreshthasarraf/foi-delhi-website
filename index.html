@@ -884,9 +884,9 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
 <dialog class="mm-lightbox" id="mmLightbox" aria-label="Festival photo viewer"><figure><img id="mmLbImg" alt=""><figcaption><span id="mmLbAlt" style="margin:0;opacity:1"></span><span id="mmLbCount"></span></figcaption></figure><button type="button" class="mm-lb-btn mm-lb-close" aria-label="Close viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button><button type="button" class="mm-lb-btn mm-lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button type="button" class="mm-lb-btn mm-lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></dialog>
 </section>
 
-    <!-- 5. Explore the festival: 3D-style carousel, automatic + manual controls. -->
+<!-- 5. Explore the festival: 3D-style carousel, automatic + manual controls.
     <section class="explore-festival-section" aria-labelledby="exploreFestivalTitle">
-      <div class="eyebrow"><span class="rule"></span><span>EXPLORE THE FESTIVAL</span></div>
+      <div class="eyebrow"><span class="rule"></span><span>EXPLORE THE FESTIVAL</div></span>
       <h2 class="home-section-title" id="exploreFestivalTitle">Explore the Festival</h2>
       <p class="home-section-desc">A space for curiosity, dialogue and the exchange of ideas. Explore the people, programmes and experiences that bring the Festival of Ideas Delhi to life.</p>
 
@@ -906,7 +906,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
           <button class="festival-arrow" id="festivalNext" type="button" aria-label="Next festival">›</button>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- 6. Past Speakers -->
     <div class="past-speakers-section">
@@ -1204,7 +1204,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
         <div id="formView" class="volunteer-form-shell">
           <div>
             <h3 style="margin:0 0 6px; font-size:20px; color:var(--plum);">Volunteer Registration</h3>
-            <p style="font-size:13px; opacity:.7; margin:0;">Please read the guidance, then fill in the form below.</p>
+            <p style="font-size:13px; opacity:.7; margin:0;">Please read the guidelines, then fill in the form below.</p>
           </div>
           <div class="volunteer-guidance">
             <h4>Before you apply</h4>
@@ -1221,7 +1221,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
               <div class="volunteer-section-label">Section 1 · Basic Info About You</div>
               <div class="volunteer-field" id="f-name"><label for="v-name">Name *</label><input id="v-name" name="name" type="text" autocomplete="name" placeholder="Your full name"><div class="volunteer-error">Please enter your name.</div></div>
               <div class="volunteer-field" id="f-phone"><label for="v-phone">Phone Number (available on WhatsApp) *</label><input id="v-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your WhatsApp number"><div class="volunteer-error">Please enter your phone number.</div></div>
-              <div class="volunteer-field" id="f-phone"><label for="v-phone">E-Mail *</label><input id="v-phone" name="Email" type="tel" autocomplete="tel" placeholder="Your E-mail"><div class="volunteer-error">Please enter your E-mail.</div></div>
+              <div class="volunteer-field" id="f-email"><label for="v-email">E-Mail *</label><input id="v-email" name="email" type="email" autocomplete="email" placeholder="Your E-mail"><div class="volunteer-error">Please enter a valid E-mail.</div></div>
               <div class="volunteer-field" id="f-college"><label for="v-college">College *</label><input id="v-college" name="college" type="text" autocomplete="organization" placeholder="Your college"><div class="volunteer-error">Please enter your college.</div></div>
               <div class="volunteer-field" id="f-course"><label for="v-course">Course and Year *</label><input id="v-course" name="course_year" type="text" placeholder="e.g. B.A. English, 2nd Year"><div class="volunteer-error">Please enter your course and year.</div></div>
 
@@ -1758,7 +1758,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     btn.addEventListener('click', function(){
       renderAboutTab(btn.dataset.aboutTab);
     });
-  });
+  }); 
 
   qsa('.detail-submit').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -1940,15 +1940,18 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     e.preventDefault();
     var valid = true;
     var requiredFields = [
-      ['#v-name','#f-name'], ['#v-phone','#f-phone'], ['#v-college','#f-college'],
+      ['#v-name','#f-name'], ['#v-phone','#f-phone'], ['#v-email','#f-email'], ['#v-college','#f-college'],
       ['#v-course','#f-course'], ['#v-about','#f-about'], ['#v-team','#f-team'],
       ['#v-why-team','#f-why-team'], ['#v-skills','#f-skills'],
-      ['#v-experience','#f-experience'], ['#v-idea','#f-idea'], ['#v-source','#f-source']
+      ['#v-experience','#f-experience'], ['#v-idea','#f-idea']
     ];
     requiredFields.forEach(function(pair){
       var input = qs(pair[0]), field = qs(pair[1]);
-      var value = input ? String(input.value || '').trim() : '';
-      if(value.length < 2){ field.classList.add('error'); valid = false; }
+       if(!input || !field) return;
+       var value = String(input.value || '').trim();
+       var bad = value.length < 2;
+       if(pair[0] === '#v-email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+       if(bad){ field.classList.add('error'); valid = false; }
       else { field.classList.remove('error'); }
     });
     if(!valid){
