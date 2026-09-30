@@ -10,19 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#FFF6EF; --cream-deep:#FFE3D6; --paper:#FFFBF8;
-    --ink:#2B1338; --plum:#4B1D6E; --maroon:#B7266F; --magenta:#D62F7B; --coral:#FF7F5F;
-    --gold:#E8703F; --gold-soft:#FFE9DE;
-    --line: rgba(75,29,110,0.15);
-    /* Shared gradients (same flow as the "Join the Festival" banner: coral -> pink -> plum) */
-    --grad-main: linear-gradient(145deg,#FF7F5F 0%,#D62F7B 48%,#4B1D6E 100%);
-    --grad-btn:  linear-gradient(120deg,#EE5A5A 0%,#D62F7B 55%,#7A2A8A 100%);
-    --grad-text: linear-gradient(100deg,#F0663F 0%,#D62F7B 50%,#4B1D6E 100%);
+    --cream:#FAF6FB; --cream-deep:#EADCF0; --paper:#FFFDFE;
+    --ink:#2B1338; --plum:#4B1D6E; --maroon:#7A4FA0; --magenta:#9A6BC2; --coral:#D98BA3;
+    --gold:#8A5DAE; --gold-soft:#EFE0EC;
+    --line: rgba(44, 19, 58, 0.14);
     --nav-h: 82px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{ margin:0; background:radial-gradient(900px 520px at 6% -4%, rgba(255,127,95,.17), transparent 62%), radial-gradient(1000px 640px at 100% 38%, rgba(214,47,123,.10), transparent 62%), radial-gradient(900px 600px at 0% 100%, rgba(75,29,110,.07), transparent 60%), var(--cream); background-attachment:fixed; color:var(--ink); font-family:'Jost',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Jost',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   img{max-width:100%; display:block;}
   a{ color:inherit; text-decoration:none; }
   button{ font-family:inherit; cursor:pointer; }
@@ -33,7 +29,7 @@
   /* ===== NAV ===== */
   header.nav{
     position:fixed; top:0; left:0; right:0; z-index:1000; height:var(--nav-h);
-    display:flex; align-items:center; background: rgba(255,246,239,0.9);
+    display:flex; align-items:center; background: rgba(251,240,232,0.9);
     backdrop-filter: blur(14px) saturate(1.2);
     box-shadow: 0 1px 0 var(--line);
     transition: height .3s ease, box-shadow .3s ease;
@@ -57,7 +53,7 @@
     transform: scaleX(0); transform-origin:left; transition: transform .3s ease;
   }
   nav.links > .nav-link:hover::after, nav.links > .nav-link.active::after{ transform:scaleX(1); }
-  nav.links > .nav-link:hover, nav.links > .drop > button:hover{ background: rgba(214,47,123,0.08); }
+  nav.links > .nav-link:hover, nav.links > .drop > button:hover{ background: rgba(142,76,158,0.08); }
   nav.links > .nav-link.active{ color:var(--maroon); }
 
   .drop{ position:relative; }
@@ -74,7 +70,7 @@
     display:block; width:100%; text-align:left; padding:11px 14px; border-radius:9px; font-size:14px;
     color:var(--ink); background:none; border:none; transition: background .2s ease;
   }
-  .drop-menu button:hover{ background: rgba(214,47,123,0.08); }
+  .drop-menu button:hover{ background: rgba(142,76,158,0.08); }
 
   .burger{ display:none; width:38px; height:38px; border:none; background:none; align-items:center; justify-content:center; flex-direction:column; gap:5px; }
   .burger span{ width:22px; height:2px; background:var(--plum); border-radius:2px; transition: transform .3s ease, opacity .3s ease; }
@@ -129,7 +125,7 @@
   @keyframes pageIn{ from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:none; } }
 
   .eyebrow{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-  .eyebrow .rule{ width:36px; height:2px; border-radius:2px; background:var(--grad-btn); }
+  .eyebrow .rule{ width:36px; height:1px; background:var(--maroon); }
   .eyebrow span{ font-size:12.5px; letter-spacing:3px; color:var(--maroon); font-weight:500; }
   .page-title{ font-size:clamp(30px,4.2vw,46px); color:var(--plum); margin:0 0 14px; line-height:1.08; }
   .page-desc{ font-size:16px; line-height:1.7; opacity:.82; max-width:60ch; margin:0 0 46px; }
@@ -140,13 +136,13 @@
   .hero{ display:grid; grid-template-columns: 1fr; justify-items:center; text-align:center; gap:20px; margin-bottom:64px; }
   .hero-logo{ width:120px; height:120px; object-fit:contain; margin-bottom:6px; }
   .hero-title{ font-size:clamp(38px,6vw,64px); color:var(--plum); margin:0; line-height:1.03; }
-  .hero-title .grad{ background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-title .grad{ background:linear-gradient(100deg,var(--maroon),var(--magenta) 45%,var(--coral)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .hero-sub{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--maroon); max-width:46ch; margin:0; }
   .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:6px; }
-  .btn-primary{ padding:14px 28px; border-radius:100px; color:#fff; font-weight:600; font-size:14px; letter-spacing:.3px; background:var(--grad-btn); box-shadow:0 16px 30px -14px rgba(214,47,123,.42); border:none; transition: transform .25s ease; }
+  .btn-primary{ padding:14px 28px; border-radius:100px; color:#fff; font-weight:600; font-size:14px; letter-spacing:.3px; background:linear-gradient(120deg,var(--maroon),var(--magenta) 55%,var(--coral)); box-shadow:0 16px 30px -14px rgba(192,107,168,.55); border:none; transition: transform .25s ease; }
   .btn-primary:hover{ transform:translateY(-2px); }
   .btn-ghost{ padding:14px 26px; border-radius:100px; font-weight:600; font-size:14px; color:var(--plum); border:1px solid var(--line); background:transparent; transition:.25s ease; }
-  .btn-ghost:hover{ border-color:var(--maroon); background:rgba(214,47,123,.06); }
+  .btn-ghost:hover{ border-color:var(--maroon); background:rgba(142,76,158,.06); }
 
   .countdown-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:520px; margin:36px auto 0; }
   .cd-box{ background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:18px 8px; text-align:center; }
@@ -164,7 +160,7 @@
   .social-row{ display:flex; gap:12px; flex-wrap:wrap; }
   .social-btn{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--cream); border:1px solid var(--line); transition: transform .25s ease, background .25s ease; }
   .social-btn svg{ width:18px; height:18px; color:var(--maroon); }
-  .social-btn:hover{ transform:translateY(-3px); background:var(--grad-btn); }
+  .social-btn:hover{ transform:translateY(-3px); background:linear-gradient(120deg,var(--maroon),var(--magenta)); }
   .social-btn:hover svg{ color:#fff; }
 
   .past-speakers-section{ margin-top:36px; }
@@ -172,7 +168,7 @@
   .past-speakers-head h3{ margin:0; font-size:19px; color:var(--plum); display:flex; align-items:center; gap:10px; }
   .past-speakers-head h3 svg{ width:19px; height:19px; color:var(--maroon); }
   .see-more-speakers{ display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border-radius:100px; font-weight:600; font-size:13px; color:var(--plum); border:1px solid var(--line); background:transparent; white-space:nowrap; transition:.25s ease; }
-  .see-more-speakers:hover{ border-color:var(--maroon); background:rgba(214,47,123,.06); }
+  .see-more-speakers:hover{ border-color:var(--maroon); background:rgba(142,76,158,.06); }
   .see-more-speakers svg{ width:14px; height:14px; }
   .ps-carousel{ overflow:hidden; cursor:grab; -webkit-user-select:none; user-select:none; padding:6px 0 10px; }
   .ps-carousel.dragging{ cursor:grabbing; }
@@ -182,7 +178,7 @@
   .ps-avatar img{ width:100%; height:100%; object-fit:cover; object-position:center 12%; }
   .ps-name{ font-size:12.5px; font-weight:600; color:var(--plum); line-height:1.3; }
   .ps-role{ font-size:11px; opacity:.65; line-height:1.3; margin-top:2px; }
-  .notify-band{ margin-top:36px; background:var(--grad-main); border-radius:26px; padding:40px 34px; text-align:center; color:#fff; }
+  .notify-band{ margin-top:36px; background:linear-gradient(120deg,var(--plum),var(--maroon) 60%,var(--magenta)); border-radius:26px; padding:40px 34px; text-align:center; color:#fff; }
   .notify-band h3{ margin:0 0 8px; font-size:24px; }
   .notify-band p{ margin:0 0 22px; opacity:.9; font-size:14.5px; }
   .notify-form{ display:flex; gap:10px; max-width:420px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
@@ -199,7 +195,7 @@
   .home-section-desc{ margin:0 0 26px; max-width:62ch; font-size:14.5px; line-height:1.7; opacity:.78; }
 
   .photo-grid-home{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-  .photo-slot{ aspect-ratio:4/3; border:1px dashed rgba(75,29,110,.28); border-radius:18px; background:linear-gradient(145deg,rgba(255,251,248,.9),rgba(255,227,214,.55)); display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
+  .photo-slot{ aspect-ratio:4/3; border:1px dashed rgba(75,29,110,.28); border-radius:18px; background:linear-gradient(145deg,rgba(255,253,254,.9),rgba(234,220,240,.45)); display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
   .photo-slot span{ font-family:'Playfair Display',serif; color:var(--maroon); font-size:15px; opacity:.72; }
   .photo-slot img{ width:100%; height:100%; object-fit:cover; }
   @media (max-width:700px){ .photo-grid-home{ grid-template-columns:repeat(2,1fr); gap:10px; } }
@@ -208,7 +204,7 @@
   .festival-carousel{ position:relative; height:350px; perspective:1100px; cursor:grab; }
   .festival-carousel.dragging{ cursor:grabbing; }
   .festival-card{ position:absolute; top:16px; left:50%; width:min(390px,72vw); height:300px; transform-style:preserve-3d; border:1px solid var(--line); border-radius:24px; overflow:hidden; background:var(--paper); box-shadow:0 24px 50px -30px rgba(46,27,61,.5); transition:transform .55s cubic-bezier(.22,.61,.36,1), opacity .55s ease, filter .55s ease; cursor:pointer; will-change:transform,opacity; }
-  .festival-card .festival-art{ height:172px; background:var(--grad-main); display:flex; align-items:flex-end; padding:22px; color:#fff; }
+  .festival-card .festival-art{ height:172px; background:linear-gradient(135deg,var(--plum),var(--maroon) 55%,var(--magenta)); display:flex; align-items:flex-end; padding:22px; color:#fff; }
   .festival-card .festival-art span{ font-size:12px; letter-spacing:2.2px; text-transform:uppercase; opacity:.8; }
   .festival-card .festival-copy{ padding:20px 22px; }
   .festival-card h3{ margin:0 0 7px; color:var(--plum); font-size:22px; }
@@ -238,48 +234,15 @@
   .register-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--paper); box-shadow:0 18px 38px -30px rgba(46,27,61,.45); }
   .register-card{ min-width:0; background:transparent; padding:18px 18px; text-align:center; transition:background .25s ease; }
   .register-card + .register-card{ border-left:1px solid var(--line); }
-  .register-card:hover{ background:rgba(214,47,123,.045); }
-  .register-icon{ width:38px; height:38px; margin:0 auto 8px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:var(--grad-btn); color:#fff; }
+  .register-card:hover{ background:rgba(142,76,158,.045); }
+  .register-icon{ width:38px; height:38px; margin:0 auto 8px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--maroon),var(--magenta)); color:#fff; }
   .register-icon svg{ width:19px; height:19px; }
   .register-card h3{ margin:0 0 5px; color:var(--plum); font-size:16px; }
   .register-card p{ margin:0 0 10px; font-size:11.5px; line-height:1.45; opacity:.72; }
   .register-btn{ display:inline-flex; align-items:center; justify-content:center; padding:8px 13px; border-radius:100px; border:1px solid var(--line); background:transparent; color:var(--plum); font-size:11.5px; font-weight:600; }
-  .register-btn:hover{ border-color:var(--maroon); background:rgba(214,47,123,.06); }
-
-
-  /* ---- Join the Festival banner ---- */
-  
- .join-banner{ position:relative; left:50%; transform:translateX(-50%); width:min(1240px, calc(100vw - 32px)); display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:18px; align-items:center; padding:30px 34px 34px 40px; color:#fff; background:var(--grad-main); border-radius:12px 12px 42px 12px; box-shadow:0 6px 0 #3d1866; }
-  .join-eyebrow{ margin:0 0 10px; font-size:12px; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:#FFE3D6; }
-  .join-title{ margin:0 0 14px; font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(26px,2.5vw,38px); line-height:1.05; color:#FFF3EA; }
-  .join-meta{ margin:0; font-size:14px; line-height:1.5; color:#FFE9DE; }
-  .join-form{ display:flex; gap:8px; margin:16px 0 0; max-width:400px; flex-wrap:nowrap; justify-content:flex-start; }
-  .join-form input{ flex:1; min-width:0; padding:10px 18px; border-radius:100px; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.16); color:#fff; font-family:inherit; font-size:14px; outline:none; }
-  .join-form input::placeholder{ color:rgba(255,255,255,.78); }
-  .join-form input:focus{ border-color:#fff; background:rgba(255,255,255,.24); }
-  .join-form button{ flex:0 0 auto; padding:10px 20px; border-radius:100px; border:0; background:#FFF0E6; color:#4B1D6E; font-family:inherit; font-size:14px; font-weight:500; white-space:nowrap; }
-  .join-form button:hover{ background:#fff; }
-  .join-banner .notify-msg{ margin-top:10px; font-size:13.5px; color:#FFE9DE; }
-
-  .join-card{ background:#FFF0E6; border:3px solid #4B1D6E; border-radius:8px 8px 34px 8px; padding:16px 18px 20px; color:#2B1338; text-align:left; box-shadow:4px 4px 0 #3d1866; }
-  .join-num{ margin:0 0 4px !important; font-size:12px !important; font-weight:500; letter-spacing:2px; color:#D42F7E !important; }
-  .join-card h3{ margin:0 0 8px; font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(19px,1.7vw,25px); line-height:1.1; color:#4B1D6E; }
-  .join-card p{ margin:0 0 14px; font-size:13.5px; line-height:1.5; color:#3b2a47; }
-  .join-btn{ display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border-radius:100px; border:0; background:#D42F7E; color:#fff; font-size:13.5px; font-weight:500; transition:background .2s ease, transform .2s ease; }
-  .join-btn svg{ width:16px; height:16px; }
-  .join-btn:hover{ background:#B9236A; transform:translateX(2px); }
-
-  @media (max-width:1100px){
-    .join-banner{ grid-template-columns:repeat(3,1fr); padding:28px 26px 32px; }
-    .join-intro{ grid-column:1 / -1; }
-  }
-  @media (max-width:760px){
-    .join-banner{ grid-template-columns:1fr; padding:24px 18px 30px; border-radius:12px 12px 34px 12px; }
-    .join-form{ flex-direction:column; }
-  }
+  .register-btn:hover{ border-color:var(--maroon); background:rgba(142,76,158,.06); }
   .register-note{ margin:12px 0 0; text-align:center; font-size:11px; opacity:.58; }
   @media (max-width:760px){ .register-grid{ grid-template-columns:1fr; } .register-card + .register-card{ border-left:0; border-top:1px solid var(--line); } }
-
 
   /* Make the home-page past-speaker preview more prominent. */
   .past-speakers-section{ margin-top:70px; }
@@ -296,7 +259,7 @@
   /* ---- Speakers ---- */
   .tab-row{ display:inline-flex; gap:6px; padding:6px; border-radius:100px; background:var(--paper); border:1px solid var(--line); margin-bottom:44px; }
   .tab-btn{ padding:11px 22px; border-radius:100px; font-size:13.5px; font-weight:500; color:var(--ink); background:none; border:none; opacity:.65; transition:.25s ease; }
-  .tab-btn.active{ opacity:1; color:#fff; background:var(--grad-btn); }
+  .tab-btn.active{ opacity:1; color:#fff; background:linear-gradient(120deg,var(--maroon),var(--magenta)); }
   .speaker-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   @media (max-width:980px){ .speaker-grid{ grid-template-columns:repeat(2,1fr);} }
   /* Mobile: keep 4 speaker cards visible at once (2 x 2) */
@@ -335,7 +298,7 @@
   .speaker-card:hover .avatar-btn{ transform:scale(1.04); }
   .speaker-card h4{ margin:0 0 4px; font-size:16px; color:var(--plum); }
   .speaker-card .role{ font-size:12.5px; color:var(--maroon); opacity:.85; margin-bottom:10px; }
-  .speaker-card .tag{ font-size:11px; padding:5px 11px; border-radius:100px; background:rgba(214,47,123,.08); color:var(--maroon); display:inline-block; }
+  .speaker-card .tag{ font-size:11px; padding:5px 11px; border-radius:100px; background:rgba(142,76,158,.08); color:var(--maroon); display:inline-block; }
 
   /* ---- Speaker detail ---- */
   .back-link{ display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:500; color:var(--maroon); margin-bottom:30px; background:none; border:none; padding:0; }
@@ -354,12 +317,7 @@
   .prog-card{ background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:26px; transition: transform .3s ease, box-shadow .3s ease; text-align:center; cursor:pointer; }
   .prog-card:hover{ transform:translateY(-5px); box-shadow:0 22px 40px -24px rgba(46,27,61,.35); }
   .prog-image{ width:100%; height:150px; object-fit:cover; border-radius:14px; margin-bottom:16px; }
-
-  /* Programme pictures: larger, zoomed-in frame with a gentle hover zoom */
-  .prog-image-wrap{ width:100%; height:230px; border-radius:14px; margin-bottom:16px; overflow:hidden; }
-  .prog-image-wrap .prog-image{ width:100%; height:100%; margin:0; border-radius:0; display:block; object-fit:cover; object-position:center; transform:scale(1.15); transition:transform .6s ease; }
-  .prog-card:hover .prog-image-wrap .prog-image{ transform:scale(1.28); }
-  .prog-icon{ width:44px; height:44px; border-radius:13px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; background:var(--grad-btn); }
+  .prog-icon{ width:44px; height:44px; border-radius:13px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; background:linear-gradient(135deg,var(--maroon),var(--magenta)); }
   .prog-icon svg{ width:22px; height:22px; color:#fff; }
   .prog-card h4{ margin:0 0 8px; font-size:17px; color:var(--plum); }
   .prog-card p{ margin:0; font-size:14px; opacity:.78; line-height:1.6; }
@@ -449,8 +407,8 @@
     border:0; border-radius:100px; padding:10px 18px; background:transparent;
     color:var(--plum); font-size:13px; font-weight:600; cursor:pointer; transition:.25s ease;
   }
-  .about-tab:hover{ background:rgba(214,47,123,.07); }
-  .about-tab.active{ color:#fff; background:var(--grad-btn); }
+  .about-tab:hover{ background:rgba(142,76,158,.07); }
+  .about-tab.active{ color:#fff; background:linear-gradient(120deg,var(--maroon),var(--magenta)); }
   .about-panel{ display:none; animation:pageIn .35s ease both; }
   .about-panel.active{ display:block; }
   .about-content-card{
@@ -465,7 +423,7 @@
   .content-placeholder{
     min-height:170px; margin-top:22px; padding:24px;
     border:1.5px dashed rgba(75,29,110,.28); border-radius:18px;
-    background:linear-gradient(145deg,rgba(255,251,248,.9),rgba(255,227,214,.55));
+    background:linear-gradient(145deg,rgba(255,253,254,.9),rgba(234,220,240,.45));
   }
   .content-placeholder strong{
     display:block; margin-bottom:7px; color:var(--maroon);
@@ -501,7 +459,7 @@
   .field.error input{ border-color:#C23B3B; }
   .err-msg{ font-size:11.5px; color:#C23B3B; margin-top:5px; display:none; }
   .field.error .err-msg{ display:block; }
-  .submit-btn{ width:100%; padding:14px; border:none; border-radius:12px; color:#fff; font-weight:600; font-size:14px; background:var(--grad-btn); }
+  .submit-btn{ width:100%; padding:14px; border:none; border-radius:12px; color:#fff; font-weight:600; font-size:14px; background:linear-gradient(120deg,var(--maroon),var(--magenta) 55%,var(--coral)); }
   .success-box{ display:none; text-align:center; padding:16px 6px; }
   .success-box.show{ display:block; }
   .success-box svg{ width:40px; height:40px; color:var(--maroon); margin-bottom:12px; }
@@ -528,14 +486,13 @@
   .volunteer-field.error input,.volunteer-field.error select,.volunteer-field.error textarea{border-color:#C23B3B;}
   .volunteer-error{display:none;font-size:10.5px;color:#C23B3B;margin-top:4px;}
   .volunteer-field.error .volunteer-error{display:block;}
-  .volunteer-submit{width:100%;margin-top:3px;padding:13px 16px;border:0;border-radius:12px;color:#fff;font-weight:600;font-size:13.5px;background:var(--grad-btn);cursor:pointer;}
+  .volunteer-submit{width:100%;margin-top:3px;padding:13px 16px;border:0;border-radius:12px;color:#fff;font-weight:600;font-size:13.5px;background:linear-gradient(120deg,var(--maroon),var(--magenta) 55%,var(--coral));cursor:pointer;}
   .volunteer-submit:hover{filter:brightness(1.03);}
   .volunteer-note{font-size:10.5px;line-height:1.5;opacity:.62;margin:9px 0 0;}
   @media (max-width:700px){.volunteer-guidance-grid{grid-template-columns:1fr;}.volunteer-scroll-box{max-height:500px;padding:14px;}.vol-form{padding:20px;}}
 
   /* ---- Footer ---- */
-  footer{ position:relative; background:linear-gradient(160deg,#5A1F78 0%,#4B1D6E 45%,#33124F 100%); color:#FFE9DE; padding:56px 0 26px; }
-  footer::before{ content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#FF7F5F,#D62F7B 55%,#4B1D6E); }
+  footer{ background:var(--plum); color:#F6E9EE; padding:56px 0 26px; }
   .foot-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px; margin-bottom:40px; }
   @media (max-width:700px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
   .foot-brand p{ font-size:13px; opacity:.65; margin-top:12px; line-height:1.7; max-width:32ch; }
@@ -861,7 +818,7 @@
         <div class="social-row">
           <a class="social-btn" href="https://www.instagram.com/festivalofideasdelhi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="display:inline-block;vertical-align:middle;"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></a>
           <a class="social-btn" href="#" aria-label="X / Twitter" onclick="return false;"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" style="display:none;"/><path d="M18.5 4h2.7l-5.9 6.7L22 20h-5.5l-4.3-5.6L7.2 20H4.5l6.3-7.2L3 4h5.6l3.9 5.1L18.5 4Z" fill="currentColor"/></svg></a>
-          <a class="social-btn" href="#" aria-label="LinkedIn" onclick="return false;"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.5 1-2.5 2.3-2.5 1.3 0 2.2 1 2.2 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+          <a class="social-btn" href="https://in.linkedin.com/in/festival-of-ideas-delhi-edition-1512a643b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.5 1-2.5 2.3-2.5 1.3 0 2.2 1 2.2 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
           <a class="social-btn" href="#" aria-label="Facebook" onclick="return false;"><svg viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
@@ -932,14 +889,13 @@
 
       <div class="festival-carousel-shell">
         <div class="festival-carousel" id="festivalCarousel" aria-label="Explore festival carousel">
-          <article class="festival-card" data-festival-index="0" data-page="programmes"><div class="festival-art"><span>01 · Market</span></div><div class="festival-copy"><h3>Karighar</h3><p>Books, makers, stalls, conversations and discoveries in one lively space.</p></div></article>
+          <article class="festival-card" data-festival-index="0" data-page="programmes"><div class="festival-art"><span>01 · Market</span></div><div class="festival-copy"><h3>DU Bazaar</h3><p>Books, makers, stalls, conversations and discoveries in one lively space.</p></div></article>
           <article class="festival-card" data-festival-index="1" data-page="programmes"><div class="festival-art"><span>02 · Program</span></div><div class="festival-copy"><h3>Programmes</h3><p>Explore talks, stalls, competitions, performances and activities across the festival.</p></div></article>
           <article class="festival-card" data-festival-index="2" data-page="speakers" data-tab="past"><div class="festival-art"><span>03 · Speakers</span></div><div class="festival-copy"><h3>Speakers</h3><p>Meet inspiring voices and explore the questions shaping our world.</p></div></article>
           <article class="festival-card" data-festival-index="3" data-page="partners"><div class="festival-art"><span>04 · Partners</span></div><div class="festival-copy"><h3>Partners</h3><p>Meet the organisations and supporters helping bring the Festival of Ideas to life.</p></div></article>
           <article class="festival-card" data-festival-index="4" data-page="gallery"><div class="festival-art"><span>05 · Gallery</span></div><div class="festival-copy"><h3>Gallery</h3><p>See moments, people and memories from past editions of the festival.</p></div></article>
-          <article class="festival-card" data-festival-index="5" data-page="programmes"><div class="festival-art"><span>06 · Create</span></div><div class="festival-copy"><h3>House of Fiction</h3><p>Hands-on sessions where you can learn, make, experiment and collaborate.</p></div></article>
-          <article class="festival-card" data-festival-index="6" data-page="programmes"><div class="festival-art"><span>07 · Stage</span></div><div class="festival-copy"><h3>Business Zone</h3><p>Music, theatre and cultural performances bring the festival to life.</p></div></article>
-          <article class="festival-card" data-festival-index="7" data-page="programmes"><div class="festival-art"><span>08 · Culture</span></div><div class="festival-copy"><h3>Food &amp; Culture</h3><p>Take a break, meet people and experience the colours and flavours around the festival.</p></div></article>
+          <article class="festival-card" data-festival-index="5" data-page="programmes"><div class="festival-art"><span>06 · creativity</span></div><div class="festival-copy"><h3>House of Fiction</h3><p>Hands-on sessions where you can learn, make, experiment and collaborate.</p></div></article>
+          <article class="festival-card" data-festival-index="6" data-page="programmes"><div class="festival-art"><span>07 · Network</span></div><div class="festival-copy"><h3>Business Zone</h3><p>Music, theatre and cultural performances bring the festival to life.</p></div></article>
         </div>
         <div class="festival-controls">
           <button class="festival-arrow" id="festivalPrev" type="button" aria-label="Previous festival">‹</button>
@@ -962,37 +918,42 @@
 
     <!-- 7. Registration -->
     <section class="register-section" aria-labelledby="registerTitle">
-     <div class="join-banner">
-      <div class="join-intro">
-        <p class="join-eyebrow">Join the Festival</p>
-        <h2 class="join-title" id="registerTitle">Choose how you want to take part</h2>
-        <p class="join-meta">29 Oct – 1 Nov 2026 &nbsp;•&nbsp; SRCC, University of Delhi<br>Leave your email for the schedule and speaker line-up.</p>
-        <form class="join-form notify-form" id="notifyForm">
-          <input type="email" id="notifyEmail" placeholder="Your email address" required>
-          <button type="submit">Notify me</button>
-        </form>
-        <div class="notify-msg" id="notifyMsg">Thanks — you're on the list!</div>
+      <div class="eyebrow"><span class="rule"></span><span>REGISTER</span></div>
+      <h2 class="home-section-title" id="registerTitle">Register for the Festival</h2>
+      <p class="home-section-desc">Choose how you want to take part.</p>
+      <div class="register-grid">
+        <article class="register-card">
+          <div class="register-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c.7-3.6 3-5.5 7-5.5s6.3 1.9 7 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Attendees</h3>
+          <p>Join and enjoy the festival.</p>
+          <button class="register-btn" type="button" data-page="attendees">Register</button>
+        </article>
+        <article class="register-card">
+          <div class="register-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 20V8.5A2.5 2.5 0 0 1 9.5 6h8A2.5 2.5 0 0 1 20 8.5V20H7Z" stroke="currentColor" stroke-width="1.7"/><path d="M7 20H4V9.5A2.5 2.5 0 0 1 6.5 7H7M10 10h6M10 14h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Delegates</h3>
+          <p>Take part as a delegate.</p>
+          <button class="register-btn" type="button" data-page="delegates">Register</button>
+        </article>
+        <article class="register-card">
+          <div class="register-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c.7-3.6 3-5.5 7-5.5s6.3 1.9 7 5.5M19 5l1 2 2 .3-1.5 1.5.4 2.2L19 10l-1.9 1-.4-2.2L15.2 7.3l2-.3 1-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <h3>Volunteers</h3>
+          <p>Join the festival team.</p>
+          <button class="register-btn" type="button" data-page="volunteers">Register</button>
+        </article>
       </div>
-      <article class="join-card">
-        <p class="join-num">01</p>
-        <h3>Attendees</h3>
-        <p>Free access to talks, stalls, performances and the festival bazaar.</p>
-        <button class="join-btn" type="button" data-page="attendees">Register <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </article>
-      <article class="join-card">
-        <p class="join-num">02</p>
-        <h3>Delegates</h3>
-        <p>Engage closer with selected sessions, speakers and fellow delegates.</p>
-        <button class="join-btn" type="button" data-page="delegates">Register <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </article>
-      <article class="join-card">
-        <p class="join-num">03</p>
-        <h3>Volunteers</h3>
-        <p>Four days on the ground — certificate, meals and merch included.</p>
-        <button class="join-btn" type="button" data-page="volunteers">Register <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </article>
-     </div>
     </section>
+
+   
+
+    <div class="notify-band">
+      <h3>Get notified</h3>
+      <p>Leave your email — we'll send the schedule and speaker line-up as it's announced.</p>
+      <form class="notify-form" id="notifyForm">
+        <input type="email" id="notifyEmail" placeholder="you@example.com" required>
+        <button type="submit">Notify Me</button>
+      </form>
+      <div class="notify-msg" id="notifyMsg">Thanks — you're on the list!</div>
+    </div>
   </div>
 </section>
 
@@ -1038,12 +999,11 @@
     <h2 class="page-title">Programmes</h2>
     <p class="page-desc">talks, stalls, competitions, performances and books — across the festival.</p>
     <div class="prog-grid">
-      <div class="prog-card" data-prog="talks"><div class="prog-image-wrap"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Talks"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Main Auditorium</h4><p>Speaker sessions and panel discussions bringing together diverse voices and perspectives.</p></div>
-      <div class="prog-card" data-prog="stalls"><div class="prog-image-wrap"><img class="prog-image" src="https://github.com/shreshthasarraf/fest-images/blob/main/foi.jpeg?raw=true"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9l1-5h14l1 5M4 9v10h16V9M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h4>Front Lawns</h4><p>Open-air conversations, community spaces and engaging experiences across the festival grounds.</p></div>
-      <div class="prog-card" data-prog="competitions"><div class="prog-image-wrap"><img class="prog-image" src="https://github.com/shreshthasarraf/fest-images/blob/main/fiction_tent.jpeg?raw=true"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.3L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.4-.7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h4>House of Fiction</h4><p>Performing arts competitions, creative showcases and fun and interactive games. A melting pot where ideas gets exchanged and creativity is celebrated.</p></div>
-      <div class="prog-card" data-prog="performances"><div class="prog-image-wrap"><img class="prog-image" src="https://github.com/shreshthasarraf/fest-images/blob/main/front_lawn.png?raw=true"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Business Zone</h4><p>Conversations on startups, businesses, entrepreneurship and a Round Table Setup for networking and bring to life the ideas shaping the world of business.</p></div>
-      <div class="prog-card" data-prog="books"><div class="prog-image-wrap"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Books"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13ZM20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z" stroke="currentColor" stroke-width="1.5"/></svg></div><h4>KariGhar</h4><p>A vibrant marketplace of creative stalls, featuring independent makers, small organisations, jewellery, books and more</p></div>
-      <div class="prog-card" data-prog="workshops"><div class="prog-image-wrap"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Workshops"></div><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Food Court</h4><p>A lively food court featuring popular fast-food brands, local favourites and something for every craving.</p></div>
+      <div class="prog-card" data-prog="talks"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Talks"><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Main Auditorium</h4><p>Speaker sessions and panel discussions bringing together diverse voices and perspectives.</p></div>
+      <div class="prog-card" data-prog="stalls"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Stalls"><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9l1-5h14l1 5M4 9v10h16V9M4 9h16" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h4>Front Lawns</h4><p>Open-air conversations, community spaces and engaging experiences across the festival grounds.</p></div>
+      <div class="prog-card" data-prog="competitions"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Competitions"><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.3L21 9l-5 4.4L17.4 21 12 17.3 6.6 21 8 13.4 3 9l6.4-.7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h4>House of Fiction</h4><p>Performing arts competitions, creative showcases and fun and interactive games. A melting pot where ideas gets exchanged and creativity is celebrated.</p></div>
+      <div class="prog-card" data-prog="performances"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Performances"><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Business Zone</h4><p>Conversations on startups, businesses, entrepreneurship and a Round Table Setup for networking and bring to life the ideas shaping the world of business.</p></div>
+      <div class="prog-card" data-prog="books"><img class="prog-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E" alt="Books"><div class="prog-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v18H6.5A2.5 2.5 0 0 1 4 18.5v-13ZM20 5.5A2.5 2.5 0 0 0 17.5 3H12v18h5.5a2.5 2.5 0 0 0 2.5-2.5v-13Z" stroke="currentColor" stroke-width="1.5"/></svg></div><h4>DU Bazaar</h4><p>A vibrant marketplace of creative stalls, featuring independent makers, small organisations, jewellery, books and more</p></div>
     </div>
   </div>
 </section>
@@ -1121,6 +1081,11 @@
           <p>A century of excellence. A legacy of leadership. A future of possibilities.</p>
           <p>In 2026, Shri Ram College of Commerce (SRCC) celebrates 100 years of shaping commerce, economics and management education in India — a milestone recognised by the Honourable Prime Minister and commemorated by India Post with a special postage stamp. Founded in 1926 as The Commercial College in a modest bungalow at 8, Daryaganj, it was renamed SRCC in 1951 in honour of founder Sir Shri Ram, and moved to Delhi University's North Campus in 1954. Since then, SRCC has grown into one of India's most distinguished institutions, producing leaders across business, finance, public life, law, cinema, media and literature.</p>
           <p>Today, that legacy is reflected in its A++ NAAC grade and its long-standing recognition for commerce education. As part of its centenary, SRCC is the official partner of the Festival of Ideas, bringing together eminent voices from business, policy, literature and economics. Stepping into its second century, SRCC carries this legacy forward with one ambitious vision: to become a college of global choice.</p>
+          <p><strong>
+  <a href="https://www.srcc.edu/centenary-celebrations-srcc" target="_blank" rel="noopener noreferrer">
+    For more information, click on SRCC.EDU
+  </a>
+</strong>></p>
         </div>
       </div>
     </div>
@@ -1131,14 +1096,13 @@
         <h3>Fortress India</h3>
         <div class="about-copy">
           <p>Fortress India is a dedicated Festival of Ideas section for conversations and material relating to India's strategic, security, defence and geopolitical landscape.</p>
-          <p>Use this section to present the official Fortress India introduction, themes, speakers, sessions, photographs, articles and other programme information.</p>
+          <p><strong>
+  <a href="https://fortressindia.in/" target="_blank" rel="noopener noreferrer">
+    For more information, click on FortressIndia.in
+  </a>
+</strong>></p>
         </div>
-        <div class="content-placeholder">
-          <strong>Fortress India — content area</strong>
-          <span>Place the official Fortress India description, programme details, speaker information, images, or other approved content in this area.</span>
-        </div>
-      </div>
-    </div>
+        
 
     <div class="faq-list" id="faqList">
       <div class="faq-item">
@@ -1265,7 +1229,7 @@
               <p style="font-size:11.5px;line-height:1.6;opacity:.72;margin:-5px 0 15px;">Answer these questions to explain your interests, skill set and enthusiasm. Keep your responses honest and crisp. The form asks applicants not to plagiarize or use AI tools.</p>
 
               <div class="volunteer-field" id="f-about"><label for="v-about">1. Tell us something about yourself that goes beyond the usual introductions. It could be a quirky habit, an unexpected interest, a hidden talent, a fun fact, or simply something that makes you, you! *</label><textarea id="v-about" name="about" placeholder="Your answer"></textarea><div class="volunteer-error">Please answer this question.</div></div>
-              <div class="volunteer-field" id="f-team"><label for="v-team">2. What team would you like to be a part of? *</label><select id="v-team" name="team"><option value="">Select a team</option><option>Space Design & Venue Aesthetics</option><option>Graphics & UI/UX Design</option><option>Public Private Partnerships & DU Affiliates</option><option>International Cooperation & Global Outreach</option><option>Multimedia Content Creation & Photography</option><option>Mainstream Media, Coverage & Editorial</option><option>Marketing & Promotions</option><option>Fiction Tent</option></select><div class="volunteer-error">Please select a team.</div></div>
+              <div class="volunteer-field" id="f-team"><label for="v-team">2. What team would you like to be a part of? *</label><select id="v-team" name="team"><option value="">Select a team</option><option>Space Design & Venue Aesthetics</option><option>Graphics & UI/UX Design</option><option>Public Private Partnerships & DU Affiliates</option><option>International Cooperation & Global Outreach</option><option>Multimedia Content Creation & Photography</option><option>Sponsorship & Brand Connections</option><option>Mainstream Media, Coverage & Editorial</option><option>Marketing & Promotions</option><option>Fiction Tent</option></select><div class="volunteer-error">Please select a team.</div></div>
               <div class="volunteer-field" id="f-why-team"><label for="v-why-team">3. Why did you choose this particular team? Tell us what interests you about the team and why you think you'd enjoy being a part of it. *</label><textarea id="v-why-team" name="why_team" placeholder="Your answer"></textarea><div class="volunteer-error">Please answer this question.</div></div>
               <div class="volunteer-field" id="f-skills"><label for="v-skills">4. List three skills or strengths that make you a good fit for your chosen team. *</label><textarea id="v-skills" name="skills" placeholder="Your three skills or strengths"></textarea><div class="volunteer-error">Please answer this question.</div></div>
               <div class="volunteer-field" id="f-experience"><label for="v-experience">5. Do you have any relevant experience you'd like to share? This could include volunteering, college societies, projects, internships, personal projects, events, or anything else relevant to the team you've chosen. *</label><textarea id="v-experience" name="experience" placeholder="Your relevant experience"></textarea><div class="volunteer-error">Please answer this question.</div></div>
@@ -1388,12 +1352,12 @@
       { id:'p12', name:'Admiral Sunil Lamba', role:'23rd Chief of the Naval Staff', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Admiral%20Sunil%20Lanba.png?raw=true" },
       { id:'p13', name:'ACM Vivek Ram Chaudhari', role:'27th Chief of the Air Staff', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/ACM%20Vivek%20Ram%20Chaudhari.png?raw=true" },
       { id:'p14', name:'Amb. Shivshankar Menon', role:'4th National Security Advisor (NSA) of India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Shivshankar%20Menon.png?raw=true" },
-      { id:'p15', name:'Amb. Lakshmi Puri', role:'Former Asst. Secretar General, United Nations',image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Lakshmi%20Puri.png?raw=true" },
+      { id:'p15', name:'Amb. Lakshmi Puri', role:'Former Asst. Secretary General, United Nations',image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Lakshmi%20Puri.png?raw=true" },
       { id:'p16', name:'Kailash Satyarthi', role:'Nobel Laureate (2014) & Author', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Kailash%20Satyarthi.png?raw=true" },
-      { id:'p17', name:'Late Bibey Debroy', role:'Chairman, Economic Advisory Council to the PM', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Late%20Bbek%20Debroy.png?raw=true" },
+      { id:'p17', name:'Late Bibek Debroy', role:'Chairman, Economic Advisory Council to the PM', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Late%20Bbek%20Debroy.png?raw=true" },
       { id:'p18', name:'Rajat Sharma', role:'Editor-in-Chief, India TV', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Rajat%20Sharma.png?raw=true" },
       { id:'p19', name:'Amb. Kanwal Sibal', role:'24th Foreign Secretary of India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Kanwal%20Sibal.png?raw=true" },
-      { id:'p20', name:'Prof. Arvind Pangariya', role:'Chairman, 14th Finance Commission of India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/arvind%20pangariya.png?raw=true" },
+      { id:'p20', name:'Prof. Arvind Pangariya', role:'Chairman, 16th Finance Commission of India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/arvind%20pangariya.png?raw=true" },
       { id:'p21', name:'Subramanian Swamy', role:'Former Union Minister & Economist', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Subramaniam%20Swami.png?raw=true" },
       { id:'p22', name:'Col. Rajyavardhan Rathore', role:'Olympion & Former Union Minister', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Col.%20Rajyavardhan%20Rathore.png?raw=true" },
       { id:'p23', name:'Jayant Sinha', role:'Former MoS for Finance & Civil Aviation', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Jayant%20SInha.png?raw=true" },
@@ -1402,30 +1366,30 @@
       { id:'p26', name:'Rajiv Gauba', role:'32nd Cabinet Secretary of India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Rajiv%20Gauba.png?raw=true" },
       { id:'p27', name:'Dr. A Rajarajan', role:'Director, Vikram Sarabhai Space Centre (ISRO)', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Dr.%20A.%20Rajarajan.png?raw=true" },
       { id:'p28', name:'Palki Sharma Upadhyay', role:'Founder, India Global Review', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Palki%20Sharma%20Upadhyay.png?raw=true" },
-      { id:'p29', name:'Adv. Jai Deepak', role:'Author & Senior Advocate, Supreme Court', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Adv.%20J%20Sai%20Deepak.png?raw=true" },
+      { id:'p29', name:'Adv. J Sai Deepak', role:'Author & Senior Advocate, Supreme Court', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Adv.%20J%20Sai%20Deepak.png?raw=true" },
       { id:'p30', name:'Taslima Nasrin', role:'Global Human Rights Activist & Author', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Taslima%20Nasrin.png?raw=true" },
       { id:'p31', name:'Mathilde Androuet', role:'Member of Parliament, European Union', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Mathilde%20Androuet.png?raw=true" },
       { id:'p32', name:'Amb. Hiroshi Suzuki', role:'Former Japanese Ambassador to India', image:"https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Hirozi%20Suzuki.png?raw=true"},
-      { id:'p33', name:'Harivansh', role:'Deputy Chairman,Rajya Sabha', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Harivansh.png?raw=true'},
+      { id:'p33', name:'Harivansh', role:'Deputy Chairman, Rajya Sabha', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Harivansh.png?raw=true'},
       { id:'p34', name:'Bhupender Yadav', role:'Environment Minister of India', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Bhupender%20Yadav.png?raw=true'},
       { id:'p35', name:'K.J. Alphons', role:'Former Tourism Minister of India', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/K.%20J.%20Alphons.png?raw=true'},
-      { id:'p36', name:'Gurcharan Das', role:'Author & Former CEO,Procter and Gamble', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Gurcharan%20Das.png?raw=true'},
-      { id:'p37', name:'Sanjeev Chopra', role:'Former Director,LBSNAA', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Sanjeev%20Chopra.png?raw=true'},
+      { id:'p36', name:'Gurcharan Das', role:'Author & Former CEO, Procter and Gamble', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Gurcharan%20Das.png?raw=true'},
+      { id:'p37', name:'Sanjeev Chopra', role:'Former Director, LBSNAA', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Sanjeev%20Chopra.png?raw=true'},
       { id:'p38', name:'Meenakshi Lekhi', role:'Former MoS for Culture & External Affairs', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Meenakshi%20Lekhi.png?raw=true'},
-      { id:'p39', name:'Aman Nath', role:'Founder,Neemrana Hotels', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Aman%20Nath.png?raw=true'},
-      { id:'p40', name:'Yadubir Singh Rawat', role:'Director General,ASI',image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Yadubir%20Singh%20Rawat.png?raw=true'},
+      { id:'p39', name:'Aman Nath', role:'Founder, Neemrana Hotels', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Aman%20Nath.png?raw=true'},
+      { id:'p40', name:'Yadubir Singh Rawat', role:'Director General, Archaeological Survey of India',image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Yadubir%20Singh%20Rawat.png?raw=true'},
       { id:'p41', name:'Prof. Meenakshi Jain', role:'Historian & MP,Rajya Sabha', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Prof.%20Meenakshi%20Jain.png?raw=true'},
       { id:'p42', name:'S.Y.Quraishi', role:'17th Chief Election Commissioner of India', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/S.%20Y.%20Quraishi.png?raw=true'},
       { id:'p43', name:'Smita Prakash', role:'Editor,Asian News International(ANI)', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Smita%20Prakash.png?raw=true'},
-      { id:'p44', name:'Rohit Bansal', role:'Group Head of Communications,Reliance Industries', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Rohit%20Bansal.png?raw=true'},
+      { id:'p44', name:'Rohit Bansal', role:'Group Head of Communications, Reliance Industries', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Rohit%20Bansal.png?raw=true'},
       { id:'p45', name:'Suhasini Haider', role:'Diplomatic Affairs Editor,The Hindu', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Suhasini%20Haider.png?raw=true'},
       { id:'p46', name:'Amb. Vikas Swarup', role:'Auhtor of Slumdog Millionaire', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Amb.%20Vikas%20Swarup.png?raw=true'},
       { id:'p47', name:'Nick Booker', role:'Cultural & Heritage Influencer', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Nick%20Booker.png?raw=true'},
-      { id:'p48', name:'Neerja Chowdhury', role:'Cultural & Heritage Influencer', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Neerja%20Chowdhury.png?raw=true'}
+      { id:'p48', name:'Neerja Chowdhury', role:'Contribution Editor, The Indian Express', image:'https://github.com/shreshthasarraf/foi-delhi/blob/main/Neerja%20Chowdhury.png?raw=true'}
     ]
   };
   speakersData.expected.concat(speakersData.past).forEach(function(sp){
-    sp.color = sp.color || ['#4B1D6E','#D62F7B'];
+    sp.color = sp.color || ['#3B1653','#C23764'];
     sp.bio = sp.bio || 'Speaker details will be announced soon.';
   });
   var currentSpeakerTab = 'past';
@@ -1487,7 +1451,6 @@
     { id:'competitions', title:'House of fiction', image: progPlaceholderImg, description:'Case studies, debates and creative challenges open to student teams, with real prizes and mentorship from industry judges. Registrations and rulebooks for each competition are shared ahead of the festival.' },
     { id:'performances', title:'Business Zone', image: progPlaceholderImg, description:'Music, spoken word and dance from student groups and guest artists each evening, closing out the day on the main stage. Expect a mix of classical, contemporary and experimental acts across the four days.' },
     { id:'books', title:'Karighar', image: progPlaceholderImg, description:'A festival book fair with leading publishers, author signings and readings throughout the event. A dedicated space for browsing, discovering new titles and meeting writers in person.' },
-    { id:'workshops', title:'Food Court', image: progPlaceholderImg, description:'Small-group, hands-on sessions across writing, design, public policy and public speaking, led by practitioners in each field. Seats are limited, so early sign-up is recommended once the schedule is out.' }
   ];
 
   function findProg(id){
@@ -1813,7 +1776,7 @@
   });
 
   /* ===================== BUTTERFLY TRANSITION ===================== */
-  var wingGradients = [ ['#4B1D6E','#D62F7B'], ['#D62F7B','#FF7F5F'], ['#B7266F','#FF7F5F'] ];
+  var wingGradients = [ ['#5B2A7A','#C23764'], ['#C23764','#E8724A'], ['#7C2142','#B98A4E'] ];
   function butterflySVG(colors){
     return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
       '<g class="fly-wing">' +
@@ -1966,7 +1929,6 @@
 
   /* ===================== NOTIFY FORM ===================== */
   qs('#notifyForm').addEventListener('submit', function(e){
-    e.preventDefault();
     var val = qs('#notifyEmail').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return;
     qs('#notifyMsg').classList.add('show');
