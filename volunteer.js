@@ -31,10 +31,6 @@ const REQUIRED_FIELDS = [
   "idea"
 ];
 
-const OPTIONAL_FIELDS = [
-  "anything"
-];
-
 /* =========================================================
    NOTION PROPERTY ALIASES
    Allows your Notion column names to be slightly different.
