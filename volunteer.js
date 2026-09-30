@@ -398,15 +398,9 @@ function textValueForProperty(
     case "rich_text":
 
       return {
-        rich_text: [
-          {
-            type: "text",
-
-            text: {
-              content: text
-            }
-          }
-        ]
+        rich_text: (text.match(/[\s\S]{1,2000}/g) || []).map(function (chunk) {
+          return { type: "text", text: { content: chunk } };
+        })
       };
 
     case "email":
@@ -772,7 +766,7 @@ async function handler(request) {
     const configured =
       Boolean(
         process.env.NOTION_TOKEN &&
-        process.env.NOTION_DB_ID
+        (process.env.NOTION_DB_ID || process.env.NOTION_DATABASE_ID)
       );
 
     return jsonResponse({
@@ -816,7 +810,7 @@ async function handler(request) {
 
     const databaseId =
       clean(
-        process.env.NOTION_DB_ID,
+        (process.env.NOTION_DB_ID || process.env.NOTION_DATABASE_ID),
         100
       );
 
@@ -915,7 +909,7 @@ async function handler(request) {
         clean(body.idea, 5000),
 
       anything:
-        clean(body.anything, 5000)
+        clean(body.anything ?? body.anything_else, 5000)
 
     };
 
