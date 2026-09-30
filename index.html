@@ -1220,7 +1220,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
             <div class="volunteer-scroll-box">
               <div class="volunteer-section-label">Section 1 · Basic Info About You</div>
               <div class="volunteer-field" id="f-name"><label for="v-name">Name *</label><input id="v-name" name="name" type="text" autocomplete="name" placeholder="Your full name"><div class="volunteer-error">Please enter your name.</div></div>
-              <div class="volunteer-field" id="f-phone"><label for="v-phone">Phone Number (available on WhatsApp) *</label><input id="v-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your WhatsApp number"><div class="volunteer-error">Please enter your phone number.</div></div>
+              <div class="volunteer-field" id="f-phone"><label for="v-phone">Phone Number (available on WhatsApp) *</label><input id="v-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your WhatsApp number"><div class="volunteer-error">Enter a valid 10-digit Indian mobile number (starting with 6-9).</div></div>
               <div class="volunteer-field" id="f-email"><label for="v-email">E-Mail *</label><input id="v-email" name="email" type="email" autocomplete="email" placeholder="Your E-mail"><div class="volunteer-error">Please enter a valid E-mail.</div></div>
               <div class="volunteer-field" id="f-college"><label for="v-college">College *</label><input id="v-college" name="college" type="text" autocomplete="organization" placeholder="Your college"><div class="volunteer-error">Please enter your college.</div></div>
               <div class="volunteer-field" id="f-course"><label for="v-course">Course and Year *</label><input id="v-course" name="course_year" type="text" placeholder="e.g. B.A. English, 2nd Year"><div class="volunteer-error">Please enter your course and year.</div></div>
@@ -1950,7 +1950,13 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
        if(!input || !field) return;
        var value = String(input.value || '').trim();
        var bad = value.length < 2;
-       if(pair[0] === '#v-email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+       if(pair[0] === '#v-email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+       if(pair[0] === '#v-phone'){
+         var d = value.replace(/\D/g,'');
+         if(d.length === 12 && d.indexOf('91') === 0) d = d.slice(2);
+         if(d.length === 11 && d.charAt(0) === '0') d = d.slice(1);
+         bad = !/^[6-9]\d{9}$/.test(d);
+       }
        if(bad){ field.classList.add('error'); valid = false; }
       else { field.classList.remove('error'); }
     });
@@ -1962,27 +1968,32 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     var submitBtn = qs('.volunteer-submit', volunteerForm);
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
-
-    var payload = Object.fromEntries(new FormData(volunteerForm));
-    var isStaticFile = window.location.protocol === 'file:';
-
-    if(isStaticFile){
-      qs('#formView').style.display = 'none';
-      qs('#successView').classList.add('show');
-      return;
+    var msgEl = qs('.volunteer-server-msg', volunteerForm);
+    if(!msgEl){
+      msgEl = document.createElement('p');
+      msgEl.className = 'volunteer-server-msg';
+      msgEl.style.cssText = 'color:#C23B3B;font-size:12px;line-height:1.5;margin:10px 0 0;';
+      submitBtn.parentNode.insertBefore(msgEl, submitBtn.nextSibling);
     }
-
+    msgEl.textContent = '';
+    var payload = Object.fromEntries(new FormData(volunteerForm));
+    payload.anything = payload.anything_else || '';
     fetch('/api/volunteer', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
     }).then(function(r){
-      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json().catch(function(){ return {}; }).then(function(data){ return { ok: r.ok, status: r.status, data: data }; });
+    }).then(function(res){
+      if(!res.ok) throw new Error(res.data.message || ('HTTP ' + res.status));
+      submitBtn.textContent = 'Submit Volunteer Application';
       qs('#formView').style.display = 'none';
       qs('#successView').classList.add('show');
-    }).catch(function(){
-      qs('#formView').style.display = 'none';
-      qs('#successView').classList.add('show');
+    }).catch(function(err){
+      console.error('Volunteer form submit failed:', err);
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Volunteer Application';
+      msgEl.textContent = (err && err.message) ? err.message : 'Could not submit. Please try again.';
     });
   }); }
 
