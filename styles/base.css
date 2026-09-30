@@ -1,0 +1,70 @@
+:root{
+  --cream:#FAF6FB; --cream-deep:#EADCF0; --paper:#FFFDFE;
+  --ink:#2B1338; --plum:#4B1D6E; --maroon:#7A4FA0; --magenta:#9A6BC2; --coral:#D98BA3;
+  --gold:#8A5DAE; --gold-soft:#EFE0EC;
+  --line: rgba(44, 19, 58, 0.14);
+  --nav-h: 82px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Jost',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img{max-width:100%; display:block;}
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+h1,h2,h3,.serif{ font-family:'Playfair Display', serif; }
+.wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+@media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+/* ===== DECORATIVE BUTTERFLIES ===== */
+.bfly-layer{ position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; }
+.bfly{ position:absolute; width:34px; height:34px; opacity:.16; color:var(--maroon); animation-timing-function:ease-in-out; animation-iteration-count:infinite; }
+.bfly svg{ width:100%; height:100%; display:block; animation:bflyFlap 1.1s ease-in-out infinite; transform-origin:center; }
+@keyframes bflyFlap{ 0%,100%{ transform:scaleX(1); } 50%{ transform:scaleX(.55); } }
+.bfly.b1{ top:14%; left:-6%; color:var(--maroon); animation:driftA 26s linear infinite; }
+.bfly.b2{ top:52%; left:-8%; width:26px; height:26px; color:var(--gold); animation:driftB 34s linear infinite; animation-delay:-6s; }
+.bfly.b3{ top:74%; left:-5%; width:22px; height:22px; color:var(--magenta); animation:driftA 30s linear infinite; animation-delay:-14s; }
+.bfly.b4{ top:30%; left:-7%; width:30px; height:30px; color:var(--coral); animation:driftB 40s linear infinite; animation-delay:-22s; }
+@keyframes driftA{
+  0%{ transform:translate(0,0) rotate(0deg); }
+  25%{ transform:translate(30vw,-6vh) rotate(6deg); }
+  50%{ transform:translate(60vw,4vh) rotate(-5deg); }
+  75%{ transform:translate(90vw,-8vh) rotate(4deg); }
+  100%{ transform:translate(118vw,2vh) rotate(0deg); }
+}
+@keyframes driftB{
+  0%{ transform:translate(0,0) rotate(0deg); }
+  30%{ transform:translate(35vw,8vh) rotate(-6deg); }
+  60%{ transform:translate(70vw,-6vh) rotate(5deg); }
+  100%{ transform:translate(118vw,6vh) rotate(0deg); }
+}
+@media (max-width:640px){ .bfly{ opacity:.12; } }
+@media (prefers-reduced-motion: reduce){ .bfly{ animation:none !important; } .bfly svg{ animation:none !important; } }
+
+/* ===== PAGES ===== */
+main{ padding-top: var(--nav-h); min-height:100vh; }
+.page{ padding:70px 0 110px; animation: pageIn .5s ease both; }
+@keyframes pageIn{ from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:none; } }
+
+.eyebrow{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.eyebrow .rule{ width:36px; height:1px; background:var(--maroon); }
+.eyebrow span{ font-size:12.5px; letter-spacing:3px; color:var(--maroon); font-weight:500; }
+.page-title{ font-size:clamp(30px,4.2vw,46px); color:var(--plum); margin:0 0 14px; line-height:1.08; }
+.page-desc{ font-size:16px; line-height:1.7; opacity:.82; max-width:60ch; margin:0 0 46px; }
+.about-teaser p{ text-align:justify; text-justify:inter-word; }
+
+/* ---- Footer ---- */
+footer{ background:var(--plum); color:#F6E9EE; padding:56px 0 26px; }
+.foot-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px; margin-bottom:40px; }
+@media (max-width:700px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+.foot-brand p{ font-size:13px; opacity:.65; margin-top:12px; line-height:1.7; max-width:32ch; }
+.foot-col h5{ font-size:11.5px; letter-spacing:2px; opacity:.6; margin:0 0 14px; }
+.foot-col button, .foot-col a{ display:block; width:100%; text-align:left; background:none; border:none; font-size:13.5px; color:inherit; opacity:.85; margin-bottom:10px; padding:0; }
+.foot-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid rgba(246,233,238,.15); font-size:12px; opacity:.6; flex-wrap:wrap; gap:10px; }
+
+/* ===== BUTTERFLY TRANSITION ===== */
+#flyOverlay{ position:fixed; inset:0; z-index:5000; pointer-events:none; overflow:hidden; }
+.fly-bfly{ position:absolute; width:46px; height:46px; will-change:transform, opacity; }
+.fly-bfly svg{ width:100%; height:100%; display:block; }
+.fly-wing{ animation: wingflap .16s ease-in-out infinite alternate; transform-origin:50% 50%; }
+
+@keyframes wingflap{ from{ transform:scaleX(1);} to{ transform:scaleX(.72);} }
