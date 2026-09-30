@@ -5,6 +5,7 @@
 const COLUMNS = {
   name: 'Name',
   phone: 'Phone',
+  email: 'Email',
   college: 'College',
   course_year: 'Course & Year',
   team: 'Team',
@@ -16,9 +17,10 @@ const COLUMNS = {
   anything_else: 'Anything else',
 };
 const OPTIONAL = ['anything_else'];
-const MAX_LEN = 2000; // Notion's limit per rich_text block
+const MAX_LEN = 10000;
 
-const text = (v) => ({ rich_text: [{ text: { content: v } }] });
+// Notion caps each rich_text block at 2000 chars, so split long answers
+const text = (v) => ({ rich_text: (v.match(/[\s\S]{1,2000}/g) || []).map((c) => ({ text: { content: c } })) });
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
@@ -36,6 +38,7 @@ export default async function handler(req, res) {
   for (const [key, column] of Object.entries(COLUMNS)) {
     if (key === 'name') properties[column] = { title: [{ text: { content: data.name } }] };
     else if (key === 'phone') properties[column] = { phone_number: data.phone };
+    else if (key === 'email') properties[column] = { email: data.email };
     // Notion select options can't contain commas
     else if (key === 'team') properties[column] = { select: { name: data.team.replace(/,/g, '') } };
     else properties[column] = text(data[key]);

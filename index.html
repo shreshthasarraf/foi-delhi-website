@@ -1985,7 +1985,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     }).then(function(r){
       return r.json().catch(function(){ return {}; }).then(function(data){ return { ok: r.ok, status: r.status, data: data }; });
     }).then(function(res){
-      if(!res.ok) throw new Error(res.data.message || ('HTTP ' + res.status));
+      if(!res.ok) throw new Error(res.data.error || res.data.message || ('HTTP ' + res.status));
       submitBtn.textContent = 'Submit Volunteer Application';
       qs('#formView').style.display = 'none';
       qs('#successView').classList.add('show');
