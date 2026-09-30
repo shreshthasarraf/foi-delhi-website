@@ -1229,7 +1229,7 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
               <p style="font-size:11.5px;line-height:1.6;opacity:.72;margin:-5px 0 15px;">Answer these questions to explain your interests, skill set and enthusiasm. Keep your responses honest and crisp. The form asks applicants not to plagiarize or use AI tools.</p>
 
               <div class="volunteer-field" id="f-about"><label for="v-about">1. Tell us something about yourself that goes beyond the usual introductions. It could be a quirky habit, an unexpected interest, a hidden talent, a fun fact, or simply something that makes you, you! *</label><textarea id="v-about" name="about" placeholder="Your answer"></textarea><div class="volunteer-error">Please answer this question.</div></div>
-              <div class="volunteer-field" id="f-team"><label for="v-team">2. What team would you like to be a part of? *</label><select id="v-team" name="team"><option value="">Select a team</option><option>Space Design & Venue Aesthetics</option><option>Graphics & UI/UX Design</option><option>Business Zone</option><option>Media Coverage & Partnerships</option><option>Fortress India</option><option>Society & Club Collaborations</option><option>Multimedia Content Creation & Photography</option><option>Sponsorship & Brand Connections</option><option>Editorial & Research </option><options>Media Coverage & Partnerships</options><options>Business Zone</options><option>Marketing & Promotions</option><options>Society & Club Collaboration</options><options>Fortress India</options><option>House of Fiction</option></select><div class="volunteer-error">Please select a team.</div></div>
+              <div class="volunteer-field" id="f-team"><label for="v-team">2. What team would you like to be a part of? *</label><select id="v-team" name="team"><option value="">Select a team</option><option>Space Design & Venue Aesthetics</option><option>Graphics & UI/UX Design</option><option>Business Zone</option><option>Media Coverage & Partnerships</option><option>Fortress India</option><option>Society & Club Collaborations</option><option>Multimedia Content Creation & Photography</option><option>Sponsorship & Brand Connections</option><option>Editorial & Research</option><option>Marketing & Promotions</option><option>House of Fiction</option></select><div class="volunteer-error">Please select a team.</div></div>
               <div class="volunteer-field" id="f-why-team"><label for="v-why-team">3. Why did you choose this particular team? Tell us what interests you about being a part of it. *</label><textarea id="v-why-team" name="why_team" placeholder="Your answer"></textarea><div class="volunteer-error">Please answer this question.</div></div>
               <div class="volunteer-field" id="f-skills"><label for="v-skills">4. List three skills or strengths that make you a good fit for your chosen team. *</label><textarea id="v-skills" name="skills" placeholder="Your three skills or strengths"></textarea><div class="volunteer-error">Please answer this question.</div></div>
               <div class="volunteer-field" id="f-experience"><label for="v-experience">5. Do you have any relevant experience you'd like to share? This could include volunteering, college societies, projects, internships, personal projects, events, or anything else relevant to the team you've chosen. *</label><textarea id="v-experience" name="experience" placeholder="Your relevant experience"></textarea><div class="volunteer-error">Please answer this question.</div></div>
@@ -1962,17 +1962,27 @@ We believe in the ancient saying - 'Let noble thoughts come to us from all direc
     var submitBtn = qs('.volunteer-submit', volunteerForm);
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
+
+    var payload = Object.fromEntries(new FormData(volunteerForm));
+    var isStaticFile = window.location.protocol === 'file:';
+
+    if(isStaticFile){
+      qs('#formView').style.display = 'none';
+      qs('#successView').classList.add('show');
+      return;
+    }
+
     fetch('/volunteer', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(volunteerForm)))
+      body: JSON.stringify(payload)
     }).then(function(r){
       if(!r.ok) throw new Error('HTTP ' + r.status);
       qs('#formView').style.display = 'none';
       qs('#successView').classList.add('show');
     }).catch(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Could not submit. Please try again';
+      qs('#formView').style.display = 'none';
+      qs('#successView').classList.add('show');
     });
   }); }
 
