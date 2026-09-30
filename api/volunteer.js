@@ -14,7 +14,6 @@ const COLUMNS = {
   experience: 'Experience',
   idea: 'Idea',
   anything_else: 'Anything else',
-  source_motivation: 'Source & motivation',
 };
 const OPTIONAL = ['anything_else'];
 const MAX_LEN = 2000; // Notion's limit per rich_text block
