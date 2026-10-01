@@ -9,7 +9,7 @@ header.nav{
 header.nav.scrolled{ height:66px; box-shadow: 0 1px 0 var(--line), 0 14px 30px -20px rgba(46,27,61,.35); }
 .nav-inner{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; }
 .brand{ display:flex; align-items:center; gap:12px; }
-.brand img{ width:72px; height:72px; object-fit:contain; }
+.brand img{ width:100px; height:100px; object-fit:contain; }
 .brand-text .name{ font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--plum); }
 .brand-text .place{ font-size:10.5px; letter-spacing:2.4px; color:var(--maroon); margin-top:1px; }
 
