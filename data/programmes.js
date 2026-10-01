@@ -26,7 +26,7 @@ export const programmes = [
     description: 'Case studies, debates and creative challenges open to student teams, with real prizes and mentorship from industry judges. Registrations and rulebooks for each competition are shared ahead of the festival.',
   },
   {
-    id: 'performances', alt: 'Performances', icon: 'performances',
+    id: 'performances', alt: 'Performances', icon: 'rupee',
     image:'https://github.com/shreshthasarraf/fest-images/blob/main/front_lawn.png?raw=true',
     title: 'Business Zone',
     blurb: 'Conversations on startups, businesses, entrepreneurship and a Round Table Setup for networking and bring to life the ideas shaping the world of business.',
