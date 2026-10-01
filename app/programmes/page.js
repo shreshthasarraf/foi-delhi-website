@@ -32,9 +32,6 @@ export default function ProgrammesPage() {
                 src={p.image}
                 alt={p.alt}
                 loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
               />
 
               <ProgIcon name={p.icon} />
