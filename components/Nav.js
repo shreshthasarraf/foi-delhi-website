@@ -81,7 +81,7 @@ export default function Nav() {
             {navLink('/programmes', 'Programmes')}
             {navLink('/gallery', 'Gallery')}
             <Drop id="aboutMenu" label="About Us" links={aboutLinks} open={drop === 'about'} setOpen={(o) => setDrop(o ? 'about' : null)} close={() => setDrop(null)} />
-            {navLink('/volunteers', 'Volunteers')}
+            {navLink('/volunteers', 'Volunteer Programme')}
           </nav>
 
           <button className={`burger${mobile ? ' open' : ''}`} aria-label="Open menu" onClick={() => setMobile(true)}><span /><span /><span /></button>
@@ -99,7 +99,7 @@ export default function Nav() {
         {mLink('/programmes', 'Programmes')}
         {mLink('/gallery', 'Gallery')}
         {mToggle('about', 'About Us', aboutLinks)}
-        {mLink('/volunteers', 'Volunteers')}
+        {mLink('/volunteers', 'Volunteer Programme')}
       </div>
     </>
   );
