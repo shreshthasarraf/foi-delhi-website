@@ -14,7 +14,7 @@ const BASIC = [
   { name: 'phone', label: 'Phone Number (available on WhatsApp) *', type: 'tel', autoComplete: 'tel', placeholder: 'Your WhatsApp number', error: 'Enter a valid 10-digit Indian mobile number (starting with 6-9).' },
   { name: 'email', label: 'E-Mail *', type: 'email', autoComplete: 'email', placeholder: 'Your E-mail', error: 'Please enter a valid E-mail.' },
   { name: 'college', label: 'College *', type: 'text', autoComplete: 'organization', placeholder: 'Your college', error: 'Please enter your college.' },
-  { name: 'course_year', label: 'Course and Year *', type: 'text', placeholder: 'e.g. B.A. English, 2nd Year', error: 'Please enter your course and year.' },
+  { name: 'course_year', label: 'Course and Year *', type: 'text', placeholder: 'e.g. B.A. Economics Honours, 2nd Year', error: 'Please enter your course and year.' },
 ];
 
 const QUESTIONS = [
