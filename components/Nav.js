@@ -71,7 +71,6 @@ export default function Nav() {
         <div className="wrap nav-inner">
           <FlyLink href="/" className="brand" onClick={closeAll}>
             <img src="/assets/logo-butterfly.png" alt="" />
-            <span className="brand-text"><span className="name">Festival of Ideas</span></span>
           </FlyLink>
 
           <nav className="links">
