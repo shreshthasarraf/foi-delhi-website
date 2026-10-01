@@ -1,7 +1,7 @@
 import FlyLink from '../../components/FlyLink';
 import PageHead from '../../components/PageHead';
 import ProgIcon from '../../components/ProgIcon';
-import { programmes, placeholderImg } from '../../data/programmes';
+import { programmes } from '../../data/programmes';
 
 export const metadata = { title: 'Programmes' };
 
@@ -13,7 +13,7 @@ export default function ProgrammesPage() {
         <div className="prog-grid">
           {programmes.map((p) => (
             <FlyLink key={p.id} href={`/programmes/${p.id}`} className="prog-card">
-              <img className="prog-image" src={placeholderImg} alt={p.alt} />
+              <img className="prog-image" src={p.image} alt={p.alt} />
               <ProgIcon name={p.icon} />
               <h4>{p.title}</h4>
               <p>{p.blurb}</p>
