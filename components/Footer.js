@@ -10,7 +10,7 @@ export default function Footer() {
               <img src="/assets/logo-footer.png" alt="" style={{ width: 32, height: 32 }} />
               <span className="brand-text"><span className="name" style={{ color: '#fff' }}>Festival of Ideas</span></span>
             </div>
-            <p>Conversations for a better tomorrow. Hosted by Shri Ram College of Commerce, University of Delhi.</p>
+            <p>Ideas from the Life, Culture and Economy of the Indian People! Hosted by the Festival of Ideas Foundation &amp; SRCC</p>
           </div>
           <div className="foot-col">
             <h5>EXPLORE</h5>

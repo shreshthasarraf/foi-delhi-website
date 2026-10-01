@@ -49,7 +49,7 @@ We believe in the ancient saying - &apos;Let noble thoughts come to us from all 
             <h3><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" strokeWidth="1.6" /><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.6" /></svg>Venue Details</h3>
             <div className="venue-row"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" /><path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" strokeWidth="1.6" /></svg><span>29th, 30th, 31st October &amp; 1st November 2026</span></div>
             <div className="venue-row"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke="currentColor" strokeWidth="1.6" /></svg><span>Shri Ram College of Commerce, University of Delhi</span></div>
-            <div className="venue-row"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" /><path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg><span>Gates open 9:30 AM · talks, stalls, competitions &amp; performances all four days</span></div>
+            <div className="venue-row"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" /><path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg><span>Gates open 9:30 AM</span></div>
           </div>
 
           <div className="info-card">
