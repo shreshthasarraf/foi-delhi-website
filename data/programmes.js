@@ -4,7 +4,7 @@ export const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 export const programmes = [
   {
     id: 'talks', alt: 'Talks', icon: 'talks',
-    image:'https://github.com/shreshthasarraf/fest-images/blob/main/mainaudi.jpeg?raw=true';
+    image:'https://github.com/shreshthasarraf/fest-images/blob/main/mainaudi.jpeg?raw=true',
     title: 'Main Auditorium',
     blurb: 'Speaker sessions and panel discussions bringing together diverse voices and perspectives.',
     detailTitle: 'Shridhar Shriram Auditorium',
@@ -12,7 +12,7 @@ export const programmes = [
   },
   {
     id: 'stalls', alt: 'Stalls', icon: 'stalls',
-    image:'https://github.com/shreshthasarraf/fest-images/blob/main/frontlawns.jpeg?raw=true;'
+    image:'https://github.com/shreshthasarraf/fest-images/blob/main/frontlawns.jpeg?raw=true',
     title: 'Front Lawns',
     blurb: 'Open-air conversations, community spaces and engaging experiences across the festival grounds.',
     detailTitle: 'Front Lawns',
@@ -28,7 +28,7 @@ export const programmes = [
   },
   {
     id: 'performances', alt: 'Performances', icon: 'performances',
-    image:'https://github.com/shreshthasarraf/fest-images/blob/main/front_lawn.png?raw=true';
+    image:'https://github.com/shreshthasarraf/fest-images/blob/main/front_lawn.png?raw=true',
     title: 'Business Zone',
     blurb: 'Conversations on startups, businesses, entrepreneurship and a Round Table Setup for networking and bring to life the ideas shaping the world of business.',
     detailTitle: 'Business Zone',
@@ -36,7 +36,7 @@ export const programmes = [
   },
   {
     id: 'books', alt: 'Books', icon: 'books',
-    image:'https://github.com/shreshthasarraf/fest-images/blob/main/karighar.jpeg?raw=true';
+    image:'https://github.com/shreshthasarraf/fest-images/blob/main/karighar.jpeg?raw=true',
     title: 'DU Bazaar',
     blurb: 'A vibrant marketplace of creative stalls, featuring independent makers, small organisations, jewellery, books and more',
     detailTitle: 'Karighar',
