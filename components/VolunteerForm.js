@@ -92,7 +92,7 @@ export default function VolunteerForm() {
     <div className="volunteer-form-shell">
       <div>
         <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--plum)' }}>Volunteer Registration</h3>
-        <p style={{ fontSize: 13, opacity: 0.7, margin: 0 }}>Please read the guidelines, then fill in the form below.</p>
+        <p style={{ fontSize: 13, opacity: 0.7, margin: 0 }}>Please read the guidelines before filling the form below.</p>
       </div>
       <div className="volunteer-guidance">
         <h4>Before you apply</h4>
