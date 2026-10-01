@@ -17,7 +17,7 @@ export default async function SpeakersPage({ searchParams }) {
   return (
     <section className="page" id="page-speakers">
       <div className="wrap">
-        <PageHead eyebrow="WHO'S SPEAKING" title="Speakers" desc="Voices returning from earlier editions, and new names confirmed for this year." />
+        <PageHead eyebrow="WHO'S SPEAKING" title="Speakers" />
 
         <div className="tab-row" role="tablist">
           {tabs.map((t) => (
