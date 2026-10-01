@@ -3,8 +3,8 @@ import PageHead from '../../components/PageHead';
 
 export const metadata = { title: 'Partners' };
 
-// Rows, order and sizes (w x h in Figma px) follow the "Past Partners" page of the
-// festival-of-ideas-2026 Figma file (node 1299:10739). Logos were cropped exactly as Figma frames them.
+// Order follows the "Past Partners" page of the festival-of-ideas-2026 Figma file (node 1299:10739),
+// row by row; w x h are the Figma sizes. Logos were cropped exactly as Figma frames them.
 const ROWS = [
   [['ds-group.svg', 'DS Group', 38.1, 45.1], ['ministry-of-culture', 'Ministry of Culture', 84.8, 41.6], ['sbi', 'State Bank of India', 90.1, 30.9], ['g20', 'G20 India 2023', 78.7, 42.4], ['asi', 'Archaeological Survey of India', 43.7, 48.7]],
   [['coca-cola', 'Coca-Cola', 78.2, 24.8], ['republic', 'Republic', 124.5, 24.8], ['ongc', 'ONGC', 76.3, 30.8], ['isb', 'ISB', 65.4, 24.8]],
@@ -21,17 +21,13 @@ export default function PartnersPage() {
     <section className="page" id="page-partners">
       <div className="wrap">
         <PageHead eyebrow="MADE POSSIBLE BY" title="Partners" />
-        <div className="partners-board">
-          {ROWS.map((row, i) => (
-            <ul key={i} className="partners-row">
-              {row.map(([file, name, w, h]) => (
-                <li key={file} style={{ '--w': w }}>
-                  <Image src={`/assets/partners/${file.includes('.') ? file : `${file}.png`}`} alt={name} title={name} width={Math.round(w * 4)} height={Math.round(h * 4)} />
-                </li>
-              ))}
-            </ul>
+        <ul className="partners-grid">
+          {ROWS.flat().map(([file, name, w, h]) => (
+            <li key={file} className="partner-tile">
+              <Image src={`/assets/partners/${file.includes('.') ? file : `${file}.png`}`} alt={name} title={name} width={Math.round(w * 4)} height={Math.round(h * 4)} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

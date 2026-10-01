@@ -11,14 +11,13 @@
 .prog-card p{ margin:0; font-size:14px; opacity:.78; line-height:1.6; }
 .detail-image{ width:100%; border-radius:24px; display:block; object-fit:cover; aspect-ratio:1/1; }
 
-.partners-board{ --k:1.7; max-width:1012px; margin:0 auto; padding:clamp(20px,4vw,40px); background:#fff; border:1px solid var(--line); border-radius:24px; display:grid; gap:clamp(28px,5vw,64px); }
-.partners-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px 24px; margin:0; padding:0; list-style:none; }
-/* each logo keeps its Figma size (--w, in Figma px) scaled by --k */
-.partners-row li{ width:calc(var(--w) * var(--k) * 1px); max-width:100%; }
-.partners-row img{ display:block; width:100%; height:auto; }
+.partners-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:18px; margin:0; padding:0; list-style:none; }
+.partner-tile{ aspect-ratio:3/2; display:flex; align-items:center; justify-content:center; padding:18px; background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 24px -18px rgba(46,27,61,.35); transition:transform .3s ease, box-shadow .3s ease; }
+.partner-tile:hover{ transform:translateY(-4px); box-shadow:0 18px 34px -18px rgba(46,27,61,.45); }
+.partner-tile img{ width:82%; height:72%; object-fit:contain; }
 @media (max-width:640px){
-  .partners-board{ --k:1; }
-  .partners-row{ justify-content:center; }
+  .partners-grid{ grid-template-columns:repeat(2,1fr); gap:10px; }
+  .partner-tile{ padding:12px; border-radius:14px; }
 }
 
 /* ---- About Us sub-sections ---- */
