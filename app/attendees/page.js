@@ -1,6 +1,5 @@
 import PageHead from '../../components/PageHead';
 import CheckList from '../../components/CheckList';
-import RegistrationForm from '../../components/RegistrationForm';
 
 export const metadata = { title: 'Register as an Attendee' };
 
@@ -13,14 +12,10 @@ export default function AttendeesPage() {
             <PageHead eyebrow="JOIN THE FESTIVAL" title="Register as an Attendee" desc="Come experience the talks, people, ideas and activities across the festival." descStyle={{ marginBottom: 0 }} />
             <CheckList items={['Access the festival programme and sessions', 'Explore the bazaar, gallery and festival spaces', 'Receive festival updates and registration details']} />
           </div>
-          <RegistrationForm kind="attendee" fields={[
-            ['Name', 'text', 'Your name'],
-            ['Phone Number', 'tel', 'Whatsapp Preferred'],
-            ['College', 'text', 'College Name'],
-            ['Course', 'text', ''],
-            ['Year', 'text', ''],
-            ['Email', 'email', 'you@example.com'],
-          ]} />
+          <div className="vol-form registration-detail-form">
+            <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--plum)' }}>Coming soon</h3>
+            <p style={{ fontSize: 13, opacity: 0.7, margin: 0 }}>Attendee registration will open soon. Stay tuned!</p>
+          </div>
         </div>
       </div>
     </section>
