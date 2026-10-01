@@ -1,5 +1,4 @@
 // `title`/`blurb` show on the Programmes cards; `detailTitle`/`description` on /programmes/[id].
-export const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23F3DECE'/%3E%3Crect x='130' y='95' width='140' height='110' rx='10' fill='none' stroke='%23C23764' stroke-width='6' opacity='.45'/%3E%3Ccircle cx='162' cy='128' r='12' fill='%23C23764' opacity='.45'/%3E%3Cpath d='M130 190l35-32 28 22 24-18 43 30v13a10 10 0 0 1-10 10H140a10 10 0 0 1-10-10v-15Z' fill='%23C23764' opacity='.45'/%3E%3C/svg%3E";
 
 export const programmes = [
   {
