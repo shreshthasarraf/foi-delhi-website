@@ -16,7 +16,7 @@ const panels = {
   ),
   '100-years-of-srcc': (
     <>
-      <h3>100 Years @ SRCC</h3>
+      <h3>SRCC @ 100 Glorious Years</h3>
       <div className="about-copy">
         <p>A century of excellence. A legacy of leadership. A future of possibilities.</p>
         <p>In 2026, Shri Ram College of Commerce (SRCC) celebrates 100 years of shaping commerce, economics and management education in India — a milestone recognised by the Honourable Prime Minister and commemorated by India Post with a special postage stamp. Founded in 1926 as The Commercial College in a modest bungalow at 8, Daryaganj, it was renamed SRCC in 1951 in honour of founder Sir Shri Ram, and moved to Delhi University&apos;s North Campus in 1954. Since then, SRCC has grown into one of India&apos;s most distinguished institutions, producing leaders across business, finance, public life, law, cinema, media and literature.</p>

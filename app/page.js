@@ -35,12 +35,8 @@ export default function Home() {
         {/* About */}
         <div className="about-teaser">
           <Eyebrow>ABOUT FESTIVAL OF IDEAS</Eyebrow>
-          <h2>Celebration of ideas, not imposition of ideologies</h2>
-          <p>The Festival of Ideas Delhi 2026 (formerly the DU Litfest at SRCC) is a premier intellectual forum bringing together leading voices across the life, culture and economy of the Indian people.
-
-A joint initiative by the Festival of Ideas Foundation and Shri Ram College of Commerce, the platform aims at celebrating ideas that spark positive economic and social change in a rapidly evolving global order.
-
-We believe in the ancient saying - &apos;Let noble thoughts come to us from all directions&apos;, and thus endeavour to create an accessible space that fosters curiosity, open debate, diverse perspectives, and a shared purpose among young inquisitive minds.</p>
+          <h2>Let noble thoughts come to us from all directions!</h2>
+          <p>The Festival of Ideas Delhi 2026 (formerly the DU Litfest at SRCC) is a premier intellectual forum bringing together leading voices across the life, culture and economy of the Indian people. A joint initiative by the Festival of Ideas Foundation and Shri Ram College of Commerce, the platform aims at celebrating ideas that spark positive economic and social change in a rapidly evolving global order. Join us as we endeavour to create an accessible space that fosters curiosity, open debate, diverse perspectives, and a shared purpose among young inquisitive minds.</p>
         </div>
 
         {/* Venue + socials */}
