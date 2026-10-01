@@ -29,7 +29,7 @@ const panels = {
     <>
       <h3>Fortress India</h3>
       <div className="about-copy">
-        <p>Fortress India is a dedicated Festival of Ideas section for conversations and material relating to India&apos;s strategic, security, defence and geopolitical landscape.</p>
+        <p>Fortress India is a national movement calling upon Indians to recognise that the defence of our Republic is no longer the task of the soldier alone. National security now rests equally on how we treat our land, history, ecology, institutions, values and our understanding of each. India&apos;s strength will depend not on weaponry or rhetoric, but on the discipline, foresight, and unity of its people.</p>
         <p><strong><a href="https://fortressindia.in/" target="_blank" rel="noopener noreferrer">For more information, click on FortressIndia.in</a></strong></p>
       </div>
     </>
