@@ -18,9 +18,9 @@ const panels = {
     <>
       <h3>SRCC @ 100 Glorious Years</h3>
       <div className="about-copy">
-        <p>A century of excellence. A legacy of leadership. A future of possibilities.</p>
-        <p>In 2026, Shri Ram College of Commerce (SRCC) celebrates 100 years of shaping commerce, economics and management education in India — a milestone recognised by the Honourable Prime Minister and commemorated by India Post with a special postage stamp. Founded in 1926 as The Commercial College in a modest bungalow at 8, Daryaganj, it was renamed SRCC in 1951 in honour of founder Sir Shri Ram, and moved to Delhi University&apos;s North Campus in 1954. Since then, SRCC has grown into one of India&apos;s most distinguished institutions, producing leaders across business, finance, public life, law, cinema, media and literature.</p>
-        <p>Today, that legacy is reflected in its A++ NAAC grade and its long-standing recognition for commerce education. As part of its centenary, SRCC is the official partner of the Festival of Ideas, bringing together eminent voices from business, policy, literature and economics. Stepping into its second century, SRCC carries this legacy forward with one ambitious vision: to become a college of global choice.</p>
+        <p>Anchoring the fourth edition of the Festival of Ideas Delhi, Shri Ram College of Commerce (SRCC) celebrates a monumental landmark - 100 glorious years of shaping India&apos;s commerce, economics, and management education - a historic milestone lauded by Hon&apos;ble Prime Minister Narendra Modi.</p>
+        <p>Established in 1926 as The Commercial College, the premier institute has evolved into one of the nation&apos;s most distinguished centers of learning, producing world-class leaders who shape business, finance, governance, law, cinema, and media today.</p>
+        <p>Standing firmly as Asia&apos;s foremost college of commerce, the Shri Ram College of Commerce embodies a century of academic excellence and an unparalleled legacy of leadership. As it steps into its second century, the college advances with an ambitious vision - to emerge as an institution of Global Choice.</p>
         <p><strong><a href="https://www.srcc.edu/centenary-celebrations-srcc" target="_blank" rel="noopener noreferrer">For more information, click on SRCC.EDU</a></strong></p>
       </div>
     </>
