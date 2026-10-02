@@ -3,7 +3,7 @@
 export const programmes = [
   {
     id: 'talks', alt: 'Talks', icon: 'talks',
-    image:'public/assets/mainaudi.jpeg',
+    image:'/assets/mainaudi.jpeg',
     title: 'Main Auditorium',
     blurb: 'Speaker sessions and panel discussions bringing together diverse voices and perspectives.',
     detailTitle: 'Shridhar Shriram Auditorium',
@@ -11,7 +11,7 @@ export const programmes = [
   },
   {
     id: 'stalls', alt: 'Stalls', icon: 'stalls',
-    image:'public/assets/frontlawns.jpeg',
+    image:'/assets/frontlawns.jpeg',
     title: 'Front Lawns',
     blurb: 'Open-air conversations, community spaces and engaging experiences across the festival grounds.',
     detailTitle: 'Front Lawns',
@@ -19,7 +19,7 @@ export const programmes = [
   },
   {
     id: 'competitions', alt: 'Competitions', icon: 'competitions',
-    image:'public/assets/fiction_tent.jpeg',
+    image:'/assets/fiction_tent.jpeg',
     title: 'House of Fiction',
     blurb: 'Performing arts competitions, creative showcases and fun and interactive games. A melting pot where ideas gets exchanged and creativity is celebrated.',
     detailTitle: 'House of fiction',
@@ -27,7 +27,7 @@ export const programmes = [
   },
   {
     id: 'performances', alt: 'Performances', icon: 'rupee',
-    image:'public/assets/business_zone.jpeg',
+    image:'/assets/business_zone.jpeg',
     title: 'Business Zone',
     blurb: 'Conversations on startups, businesses, entrepreneurship and a Round Table Setup for networking and bring to life the ideas shaping the world of business.',
     detailTitle: 'Business Zone',
@@ -35,7 +35,7 @@ export const programmes = [
   },
   {
     id: 'books', alt: 'Books', icon: 'books',
-    image:'public/assets/karighar.jpeg',
+    image:'/assets/karighar.jpeg',
     title: 'DU Bazaar',
     blurb: 'A vibrant marketplace of creative stalls, featuring independent makers, small organisations, jewellery, books and more',
     detailTitle: 'Karighar',
