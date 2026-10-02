@@ -1,8 +1,9 @@
 import PageHead from '../../components/PageHead';
 import PhotoGallery from '../../components/PhotoGallery';
 import { memories, pastEditions } from '../../data/photos';
+import { staticPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Gallery' };
+export const metadata = staticPageMetadata('/gallery');
 
 export default function GalleryPage() {
   return (

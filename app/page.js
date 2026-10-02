@@ -5,6 +5,9 @@ import MemoriesMosaic from '../components/MemoriesMosaic';
 import PastSpeakersCarousel from '../components/PastSpeakersCarousel';
 import NotifyForm from '../components/NotifyForm';
 import { pastSpeakers } from '../data/speakers';
+import { staticPageMetadata } from '../lib/seo';
+
+export const metadata = staticPageMetadata('/');
 
 const HERO_LOGO = 'https://github.com/shreshthasarraf/fest-images/blob/main/ChatGPT%20Image%20Sep%2022,%202026,%2010_40_29%20PM.png?raw=true';
 

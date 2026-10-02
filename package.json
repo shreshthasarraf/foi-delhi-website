@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check:indexing": "node scripts/check-indexing.mjs"
   },
   "dependencies": {
     "next": "^16.3.8",

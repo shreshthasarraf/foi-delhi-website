@@ -2,10 +2,9 @@ import FlyLink from '../../components/FlyLink';
 import PageHead from '../../components/PageHead';
 import ProgIcon from '../../components/ProgIcon';
 import { programmes } from '../../data/programmes';
+import { staticPageMetadata } from '../../lib/seo';
 
-export const metadata = {
-  title: 'Programmes',
-};
+export const metadata = staticPageMetadata('/programmes');
 
 export default function ProgrammesPage() {
   return (

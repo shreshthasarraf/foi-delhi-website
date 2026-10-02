@@ -1,8 +1,9 @@
 import PageHead from '../../components/PageHead';
 import CheckList from '../../components/CheckList';
 import RegistrationForm from '../../components/RegistrationForm';
+import { staticPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Register as a Delegate' };
+export const metadata = staticPageMetadata('/delegates');
 
 export default function DelegatesPage() {
   return (

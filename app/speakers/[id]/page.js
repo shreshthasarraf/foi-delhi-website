@@ -1,14 +1,22 @@
 import { notFound } from 'next/navigation';
 import BackLink from '../../../components/BackLink';
 import SpeakerAvatar, { avatarBg } from '../../../components/SpeakerAvatar';
-import { allSpeakers, findSpeaker } from '../../../data/speakers';
+import { allSpeakers, findSpeaker, publishedSpeakers } from '../../../data/speakers';
+import { pageMetadata } from '../../../lib/seo';
 
 export const dynamicParams = false;
 export const generateStaticParams = () => allSpeakers.map((s) => ({ id: s.id }));
 
 export async function generateMetadata({ params }) {
   const sp = findSpeaker((await params).id);
-  return { title: sp?.name, description: sp?.role };
+  if (!sp) notFound();
+  return pageMetadata({
+    path: `/speakers/${sp.id}`,
+    title: sp.name,
+    description: `${sp.name} — ${sp.role}. Explore their profile at Festival of Ideas Delhi.`,
+    image: sp.image || undefined,
+    index: publishedSpeakers.some((speaker) => speaker.id === sp.id),
+  });
 }
 
 export default async function SpeakerDetail({ params }) {

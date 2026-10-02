@@ -1,5 +1,6 @@
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { HOME_TITLE, INDEXING_ENABLED, SITE_NAME, SITE_URL, staticPages } from '../lib/seo';
 import '../styles/base.css';
 import '../styles/nav.css';
 import '../styles/home.css';
@@ -10,9 +11,14 @@ import '../styles/gallery.css';
 import '../styles/forms.css';
 
 export const metadata = {
-  metadataBase: new URL('https://festivalofideas.org'),
-  title: { default: 'Festival of Ideas — Delhi | 4th Edition', template: '%s | Festival of Ideas — Delhi' },
-  description: 'Ideas from the Life, Culture & Economy of the Indian People! 29 October – 1 November 2026 at Shri Ram College of Commerce, University of Delhi.',
+  metadataBase: new URL(SITE_URL),
+  title: { default: HOME_TITLE, template: `%s | ${SITE_NAME}` },
+  description: staticPages[0].description,
+  robots: { index: INDEXING_ENABLED, follow: true },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } : undefined,
+  },
   icons: { icon: '/assets/logo-butterfly.png' },
 };
 

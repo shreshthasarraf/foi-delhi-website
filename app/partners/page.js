@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import PageHead from '../../components/PageHead';
+import { staticPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Partners' };
+export const metadata = staticPageMetadata('/partners');
 
 // Order follows the "Past Partners" page of the festival-of-ideas-2026 Figma file (node 1299:10739),
 // row by row; w x h are the Figma sizes. Logos were cropped exactly as Figma frames them.

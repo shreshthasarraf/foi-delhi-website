@@ -1,7 +1,8 @@
 import PageHead from '../../components/PageHead';
 import CheckList from '../../components/CheckList';
+import { staticPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Register as an Attendee' };
+export const metadata = staticPageMetadata('/attendees');
 
 export default function AttendeesPage() {
   return (

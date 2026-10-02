@@ -3,8 +3,15 @@ import FlyLink from '../../components/FlyLink';
 import PageHead from '../../components/PageHead';
 import SpeakerAvatar, { avatarBg } from '../../components/SpeakerAvatar';
 import { pastSpeakers } from '../../data/speakers';
+import { pageMetadata, staticPages } from '../../lib/seo';
 
-export const metadata = { title: 'Speakers' };
+export async function generateMetadata({ searchParams }) {
+  const expected = (await searchParams).tab === 'expected';
+  return pageMetadata({
+    ...staticPages.find((page) => page.path === '/speakers'),
+    ...(expected ? { title: 'Expected Speakers', description: 'The expected speaker line-up for Festival of Ideas Delhi 2026 will be announced soon.', index: false } : {}),
+  });
+}
 
 const tabs = [
   { key: 'expected', label: 'Expected Speakers', href: '/speakers?tab=expected' },

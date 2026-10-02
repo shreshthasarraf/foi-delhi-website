@@ -106,6 +106,10 @@ export const pastSpeakers = speakers.past.map(withDefaults);
 export const expectedSpeakers = speakers.expected.map(withDefaults);
 export const allSpeakers = [...expectedSpeakers, ...pastSpeakers];
 
+// The expected-speaker tab is still "Coming soon". Add expectedSpeakers here
+// when their profiles and the line-up are announced publicly.
+export const publishedSpeakers = pastSpeakers;
+
 export const findSpeaker = (id) => allSpeakers.find((s) => s.id === id);
 
 export const initials = (name) => {
