@@ -24,6 +24,11 @@ are also marked `noindex`, block crawling and have an empty sitemap.
 The sitemap deliberately omits `lastmod`: add it only when reliable content
 modification dates exist, rather than using the time of a build or request.
 
+The homepage includes `WebSite` and `Organization` structured data with the
+festival's name, canonical website, logo and official social profiles. This
+helps identify the Delhi festival; it does not guarantee a ranking or exclusive
+search results for the shared phrase “Festival of Ideas”.
+
 ## Verification
 
 If HTML verification is needed, set `GOOGLE_SITE_VERIFICATION` or

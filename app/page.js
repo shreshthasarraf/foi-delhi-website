@@ -5,9 +5,34 @@ import MemoriesMosaic from '../components/MemoriesMosaic';
 import PastSpeakersCarousel from '../components/PastSpeakersCarousel';
 import NotifyForm from '../components/NotifyForm';
 import { pastSpeakers } from '../data/speakers';
-import { staticPageMetadata } from '../lib/seo';
+import { absoluteUrl, SITE_NAME, SOCIAL_LINKS, staticPageMetadata } from '../lib/seo';
 
 export const metadata = staticPageMetadata('/');
+
+// Describe the same brand and official profiles that visitors see on this page.
+const siteIdentity = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': absoluteUrl('/#website'),
+      name: SITE_NAME,
+      alternateName: 'Festival of Ideas',
+      url: absoluteUrl('/'),
+      publisher: { '@id': absoluteUrl('/#organization') },
+    },
+    {
+      '@type': 'Organization',
+      '@id': absoluteUrl('/#organization'),
+      name: SITE_NAME,
+      alternateName: 'Festival of Ideas',
+      url: absoluteUrl('/'),
+      logo: absoluteUrl('/assets/logo-butterfly.png'),
+      description: 'A joint initiative by the Festival of Ideas Foundation and Shri Ram College of Commerce celebrating ideas across the life, culture and economy of the Indian people.',
+      sameAs: Object.values(SOCIAL_LINKS),
+    },
+  ],
+};
 
 const HERO_LOGO = 'https://github.com/shreshthasarraf/fest-images/blob/main/ChatGPT%20Image%20Sep%2022,%202026,%2010_40_29%20PM.png?raw=true';
 
@@ -22,6 +47,10 @@ const registerOptions = [
 export default function Home() {
   return (
     <section className="page" id="page-home">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentity).replace(/</g, '\\u003c') }}
+      />
       <div className="wrap">
         {/* Hero + countdown */}
         <div className="hero">
@@ -55,10 +84,10 @@ export default function Home() {
             <h3><svg viewBox="0 0 24 24" fill="none"><path d="M18 8a6 6 0 1 0-11.32 2.7L4 21l7-2 7 2-2.68-10.3A6 6 0 0 0 18 8Z" stroke="currentColor" strokeWidth="1.6" /></svg>Follow us!</h3>
             <p style={{ fontSize: 14, opacity: 0.75, margin: '0 0 18px' }}>Behind-the-scenes, speaker announcements and highlight reels.</p>
             <div className="social-row">
-              <a className="social-btn" href="https://www.instagram.com/festivalofideasdelhi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" /></svg></a>
+              <a className="social-btn" href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" /></svg></a>
               {/* ponytail: X and Facebook have no account URLs yet; add an href when they exist */}
               <span className="social-btn" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none"><path d="M18.5 4h2.7l-5.9 6.7L22 20h-5.5l-4.3-5.6L7.2 20H4.5l6.3-7.2L3 4h5.6l3.9 5.1L18.5 4Z" fill="currentColor" /></svg></span>
-              <a className="social-btn" href="https://in.linkedin.com/in/festival-of-ideas-delhi-edition-1512a643b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="1.6" /><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.5 1-2.5 2.3-2.5 1.3 0 2.2 1 2.2 2.5V17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg></a>
+              <a className="social-btn" href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="1.6" /><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.5 1-2.5 2.3-2.5 1.3 0 2.2 1 2.2 2.5V17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg></a>
               <span className="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /></svg></span>
             </div>
           </div>
