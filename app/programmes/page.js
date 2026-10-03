@@ -11,11 +11,7 @@ export default function ProgrammesPage() {
     <section className="page" id="page-programmes">
       <div className="wrap">
 
-        <PageHead
-          eyebrow="FOUR DAYS OF"
-          title="Programmes"
-          desc="Talks, stalls, competitions, performances and books — across the festival."
-        />
+        <PageHead title="Festival Layout" />
 
         <div className="prog-grid">
 

@@ -34,7 +34,7 @@ export default async function ProgrammeDetail({ params }) {
       <div className="wrap">
 
         <BackLink href="/programmes">
-          Back to Programmes
+          Back to Festival Layout
         </BackLink>
 
         <div className="detail-grid">

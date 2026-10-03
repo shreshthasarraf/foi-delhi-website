@@ -15,13 +15,13 @@ export default function Footer() {
           <div className="foot-col">
             <h5>EXPLORE</h5>
             <FlyLink href="/speakers">Speakers</FlyLink>
-            <FlyLink href="/programmes">Programmes</FlyLink>
+            <FlyLink href="/programmes">Festival Layout</FlyLink>
             <FlyLink href="/gallery">Gallery</FlyLink>
           </div>
           <div className="foot-col">
             <h5>FESTIVAL</h5>
             <FlyLink href="/about">About Us</FlyLink>
-            <FlyLink href="/partners">Partners</FlyLink>
+            <FlyLink href="/partners">Past Partners</FlyLink>
             <FlyLink href="/volunteers">Volunteers</FlyLink>
           </div>
         </div>

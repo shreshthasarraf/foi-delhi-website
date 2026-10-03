@@ -12,9 +12,9 @@ export const programmes = [
   {
     id: 'stalls', alt: 'Stalls', icon: 'stalls',
     image:'/assets/frontlawns.jpeg',
-    title: 'Front Lawns',
+    title: 'Front Lawn',
     blurb: 'Open-air conversations, community spaces and engaging experiences across the festival grounds.',
-    detailTitle: 'Front Lawns',
+    detailTitle: 'Front Lawn',
     description: 'Student societies, publishers and partner brands set up along the avenue for all four days, with everything from books and merchandise to hands-on activities and tastings. A great way to explore the festival at your own pace between sessions.',
   },
   {

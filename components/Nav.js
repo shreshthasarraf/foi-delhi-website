@@ -76,8 +76,8 @@ export default function Nav() {
           <nav className="links">
             {navLink('/', 'Home')}
             <Drop id="speakerMenu" label="Speakers" links={speakerLinks} open={drop === 'speakers'} setOpen={(o) => setDrop(o ? 'speakers' : null)} close={() => setDrop(null)} />
-            {navLink('/partners', 'Partners')}
-            {navLink('/programmes', 'Programmes')}
+            {navLink('/partners', 'Past Partners')}
+            {navLink('/programmes', 'Festival Layout')}
             {navLink('/gallery', 'Gallery')}
             <Drop id="aboutMenu" label="About Us" links={aboutLinks} open={drop === 'about'} setOpen={(o) => setDrop(o ? 'about' : null)} close={() => setDrop(null)} />
             {navLink('/volunteers', 'Volunteer Programme')}
@@ -94,8 +94,8 @@ export default function Nav() {
         </div>
         {mLink('/', 'Home')}
         {mToggle('speakers', 'Speakers', speakerLinks)}
-        {mLink('/partners', 'Partners')}
-        {mLink('/programmes', 'Programmes')}
+        {mLink('/partners', 'Past Partners')}
+        {mLink('/programmes', 'Festival Layout')}
         {mLink('/gallery', 'Gallery')}
         {mToggle('about', 'About Us', aboutLinks)}
         {mLink('/volunteers', 'Volunteer Programme')}

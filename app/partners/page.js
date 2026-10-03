@@ -21,7 +21,7 @@ export default function PartnersPage() {
   return (
     <section className="page" id="page-partners">
       <div className="wrap">
-        <PageHead eyebrow="MADE POSSIBLE BY" title="Partners" />
+        <PageHead title="Past Partners" />
         <ul className="partners-grid">
           {ROWS.flat().map(([file, name, w, h]) => (
             <li key={file} className="partner-tile">

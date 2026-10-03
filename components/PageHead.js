@@ -2,7 +2,7 @@
 export default function PageHead({ eyebrow, title, desc, descStyle }) {
   return (
     <>
-      <div className="eyebrow"><span className="rule" /><span>{eyebrow}</span></div>
+      {eyebrow && <div className="eyebrow"><span className="rule" /><span>{eyebrow}</span></div>}
       <h2 className="page-title">{title}</h2>
       {desc && <p className="page-desc" style={descStyle}>{desc}</p>}
     </>
