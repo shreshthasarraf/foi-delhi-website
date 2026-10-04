@@ -6,10 +6,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <div className="brand">
-              <img src="/assets/logo-footer.png" alt="" style={{ width: 32, height: 32 }} />
-              <span className="brand-text"><span className="name" style={{ color: '#fff' }}>Festival of Ideas</span></span>
-            </div>
+            <img src="/assets/logo-footer-full.png" alt="Festival of Ideas Delhi" style={{ width: 220, maxWidth: '100%', height: 'auto' }} />
             <p>Ideas from the Life, Culture and Economy of the Indian People! Hosted by the Festival of Ideas Foundation &amp; SRCC</p>
           </div>
           <div className="foot-col">
