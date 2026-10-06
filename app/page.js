@@ -41,7 +41,6 @@ const Eyebrow = ({ children }) => <div className="eyebrow"><span className="rule
 const registerOptions = [
   { href: '/attendees', title: 'Attendees', text: 'Join and enjoy the festival.', icon: <><circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.7" /><path d="M5 20c.7-3.6 3-5.5 7-5.5s6.3 1.9 7 5.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></> },
   { href: '/delegates', title: 'Delegates', text: 'Take part as a delegate.', icon: <><path d="M7 20V8.5A2.5 2.5 0 0 1 9.5 6h8A2.5 2.5 0 0 1 20 8.5V20H7Z" stroke="currentColor" strokeWidth="1.7" /><path d="M7 20H4V9.5A2.5 2.5 0 0 1 6.5 7H7M10 10h6M10 14h6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" /></> },
-  { href: '/volunteers', title: 'Volunteers', text: 'Join the festival team.', icon: <><circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.7" /><path d="M5 20c.7-3.6 3-5.5 7-5.5s6.3 1.9 7 5.5M19 5l1 2 2 .3-1.5 1.5.4 2.2L19 10l-1.9 1-.4-2.2L15.2 7.3l2-.3 1-2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" /></> },
 ];
 
 export default function Home() {
@@ -59,7 +58,6 @@ export default function Home() {
           <p className="hero-sub">Ideas from the Life, Culture &amp; Economy of the Indian People!</p>
           <div className="hero-actions">
             <FlyLink className="btn-primary" href="/programmes">Explore the Festival</FlyLink>
-            <FlyLink className="btn-ghost" href="/volunteers">Volunteer Programme</FlyLink>
           </div>
           <Countdown />
         </div>
