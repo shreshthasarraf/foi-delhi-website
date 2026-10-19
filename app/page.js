@@ -28,7 +28,7 @@ const siteIdentity = {
       alternateName: 'Festival of Ideas',
       url: absoluteUrl('/'),
       logo: absoluteUrl('/assets/logo-butterfly.png'),
-      description: 'A joint initiative by the Festival of Ideas Foundation and Shri Ram College of Commerce celebrating ideas across the life, culture and economy of the Indian people.',
+      description: 'A joint initiative by Shri Ram College of Commerce and Festival of Ideas Foundation celebrating ideas across the life, culture and economy of the Indian people.',
       sameAs: Object.values(SOCIAL_LINKS),
     },
   ],
