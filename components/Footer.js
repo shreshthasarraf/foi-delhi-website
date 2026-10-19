@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <img src="/assets/logo-footer-full.png" alt="Festival of Ideas Delhi" style={{ width: 220, maxWidth: '100%', height: 'auto' }} />
-            <p>Ideas from the Life, Culture and Economy of the Indian People! Hosted by the Festival of Ideas Foundation &amp; SRCC</p>
+            <p>Ideas from the Life, Culture and Economy of the Indian People! Hosted by Shri Ram College of Commerce &amp; Festival of Ideas Foundation. </p>
           </div>
           <div className="foot-col">
             <h5>EXPLORE</h5>
