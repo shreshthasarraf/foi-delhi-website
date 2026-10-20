@@ -8,8 +8,8 @@ const panels = {
     <>
       <h3>Festival of Ideas</h3>
       <div className="about-copy">
-        <p>The Festival of Ideas Delhi 2026 (formerly DU Litfest at SRCC) is an intellectual and thought-leadership forum bringing together distinguished voices from the life and culture of the Indian people in a fast-moving global economic order.</p>
-        <p>A joint initiative by Shri Ram College of Commerce and Festival of Ideas Foundation, the festival brings together conversations across business, politics, economics, policy, military, global affairs, art, culture, environment, literature and beyond.</p>
+        <p>The Festival of Ideas Delhi 2026 is a premier intellectual forum celebrating ideas drawn from the life, culture and economy of the Indian people.</p>
+        <p>A joint initiative by the Shri Ram College of Commerce and supported by the Festival of Ideas Foundation, we endeavour to cultivate an accessible space for young inquisitive minds, introducing them to noble ideas that inspire meaningful economic &amp; social change towards a shared purpose.</p>
         <p>May ideas come to us from everywhere.</p>
       </div>
     </>
