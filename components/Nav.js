@@ -9,10 +9,7 @@ const speakerLinks = [
   { href: '/speakers', label: 'Past Speakers' },
   { href: '/speakers?tab=expected', label: 'Expected Speakers' },
 ];
-const aboutLinks = [
-  ...aboutSections.map((s) => ({ href: `/about/${s.slug}`, label: s.tab })),
-  { href: '/leadership', label: 'Leadership' },
-];
+const aboutLinks = aboutSections.map((s) => ({ href: `/about/${s.slug}`, label: s.tab }));
 
 const Chev = (props) => (
   <svg className="chev" viewBox="0 0 24 24" fill="none" {...props}><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -82,6 +79,7 @@ export default function Nav() {
             {navLink('/partners', 'Past Partners')}
             {navLink('/programmes', 'Festival Layout')}
             {navLink('/gallery', 'Gallery')}
+            {navLink('/leadership', 'Leadership')}
             <Drop id="aboutMenu" label="About Us" links={aboutLinks} open={drop === 'about'} setOpen={(o) => setDrop(o ? 'about' : null)} close={() => setDrop(null)} />
           </nav>
 
@@ -99,6 +97,7 @@ export default function Nav() {
         {mLink('/partners', 'Past Partners')}
         {mLink('/programmes', 'Festival Layout')}
         {mLink('/gallery', 'Gallery')}
+        {mLink('/leadership', 'Leadership')}
         {mToggle('about', 'About Us', aboutLinks)}
       </div>
     </>
