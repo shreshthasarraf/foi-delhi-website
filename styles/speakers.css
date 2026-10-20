@@ -55,3 +55,13 @@
 .detail-name{ font-size:32px; color:var(--plum); margin:0 0 6px; }
 .detail-role{ font-size:15px; color:var(--maroon); margin-bottom:18px; }
 .detail-bio{ font-size:15.5px; line-height:1.85; opacity:.85; max-width:60ch; }
+
+/* ---- Leadership ---- */
+.leader-group{ margin-top:40px; }
+.leader-group h3{ margin:0 0 22px; color:var(--plum); font-size:28px; }
+.leader-grid{ grid-template-columns:repeat(3,1fr); }
+.leader-grid .tag{ margin-bottom:10px; }
+/* Figma photos are already framed cards with a transparent top, so show them whole */
+.leader-grid .avatar-btn{ aspect-ratio:107/118; border-radius:0; overflow:visible; }
+.leader-grid .avatar-btn img{ object-fit:contain; border-radius:0; }
+@media (max-width:980px){ .leader-grid{ grid-template-columns:repeat(2,minmax(0,1fr));} }

@@ -9,7 +9,10 @@ const speakerLinks = [
   { href: '/speakers', label: 'Past Speakers' },
   { href: '/speakers?tab=expected', label: 'Expected Speakers' },
 ];
-const aboutLinks = aboutSections.map((s) => ({ href: `/about/${s.slug}`, label: s.tab }));
+const aboutLinks = [
+  ...aboutSections.map((s) => ({ href: `/about/${s.slug}`, label: s.tab })),
+  { href: '/leadership', label: 'Leadership' },
+];
 
 const Chev = (props) => (
   <svg className="chev" viewBox="0 0 24 24" fill="none" {...props}><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
