@@ -5,6 +5,7 @@ import MemoriesMosaic from '../components/MemoriesMosaic';
 import PastSpeakersCarousel from '../components/PastSpeakersCarousel';
 import NotifyForm from '../components/NotifyForm';
 import { pastSpeakers } from '../data/speakers';
+import { leadership } from '../data/leadership';
 import { absoluteUrl, SITE_NAME, SOCIAL_LINKS, staticPageMetadata } from '../lib/seo';
 
 export const metadata = staticPageMetadata('/');
@@ -68,6 +69,23 @@ export default function Home() {
           <h2>Let noble thoughts come to us from all directions!</h2>
           <p>The Festival of Ideas Delhi 2026 (formerly the DU Litfest at SRCC) is a premier intellectual forum bringing together leading voices across the life, culture and economy of the Indian people. A joint initiative by the Festival of Ideas Foundation and Shri Ram College of Commerce, the platform aims at celebrating ideas that spark positive economic and social change in a rapidly evolving global order. Join us as we endeavour to create an accessible space that fosters curiosity, open debate, diverse perspectives, and a shared purpose among young inquisitive minds.</p>
         </div>
+
+        {/* Leadership */}
+        <section className="leader-strip" aria-labelledby="homeLeadershipTitle">
+          <div className="leader-strip-head">
+            <h3 id="homeLeadershipTitle">Leadership</h3>
+            <FlyLink className="see-more-speakers" href="/leadership">See more <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></FlyLink>
+          </div>
+          <div className="leader-strip-grid">
+            {leadership.flatMap((g) => g.people.map((p) => ({ ...p, label: p.tag || g.title }))).map((p) => (
+              <FlyLink key={p.name} href="/leadership" className="leader-mini">
+                <Image src={p.image} alt={p.name} width={120} height={133} />
+                <h4>{p.name}</h4>
+                <span>{p.label}</span>
+              </FlyLink>
+            ))}
+          </div>
+        </section>
 
         {/* Venue + socials */}
         <div className="home-grid" style={{ marginTop: 70 }}>
